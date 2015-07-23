@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +20,24 @@ namespace AllShrink
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string[] files = System.IO.Directory.GetFiles("C:/test");
+            //string[] files = System.IO.Directory.GetFiles("C:/test");
+            DirectoryInfo di = new DirectoryInfo("C:/test");
+            FileInfo[] fi = di.GetFiles();
 
-            for (int x = 0; x < files.Length; x++)
+            // FileInfo[] files = System.IO.DirectoryInfo("C:/test").getFiles();
+
+           
+            for (int x = 0; x < fi.Length; x++)
             {
-                ListViewItem item = new ListViewItem(new string[] { files[x], "test" });
-                listView1.Items.Add(item);
+                ListViewItem item = new ListViewItem(new string[] { fi[x].Name, fi[x].Length / 1024 + " KB", "12%" });
+                listViewMain.Items.Add(item);
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listViewMain.Items.Clear();
         }
     }
 }
