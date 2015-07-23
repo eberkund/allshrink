@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ImageMagick;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,7 @@ namespace AllShrink
            
             for (int x = 0; x < fi.Length; x++)
             {
-                ListViewItem item = new ListViewItem(new string[] { fi[x].Name, fi[x].Length / 1024 + " KB", "12%" });
+                ListViewItem item = new ListViewItem(new string[] { fi[x].Name, fi[x].Length / 1024 + " KB", "" });
                 listViewMain.Items.Add(item);
             }
 
@@ -38,6 +39,20 @@ namespace AllShrink
         private void button1_Click(object sender, EventArgs e)
         {
             listViewMain.Items.Clear();
+        }
+
+        private void buttonRun_Click(object sender, EventArgs e)
+        {
+            //Console.WriteLine(listViewMain.Items[0].ToString());
+            //MagickImage img = new MagickImage();
+
+            foreach (ListViewItem file in listViewMain.Items)
+            {
+                Console.WriteLine(file.ToString());
+                file.SubItems[2].Text = "12%";
+            }
+           
+            
         }
     }
 }
