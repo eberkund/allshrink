@@ -40,6 +40,7 @@ namespace AllShrink
             long afterLength;
             float savings;
             string outputName;
+            ImageOptimizer optimizer;
             MagickImage mi;
             FileInfo fi;
 
@@ -50,12 +51,17 @@ namespace AllShrink
                 beforeLength = fi.Length;
 
                 // Resize and optimize the image
+                outputName = file.Text.Insert(file.Text.LastIndexOf('.'), "_resized");
                 mi = new MagickImage(file.Text);
                 mi.Resize(200, 200);
-                outputName = file.Text.Insert(file.Text.LastIndexOf('.'), "_resized");
+                mi.Interlace = Interlace.Jpeg;
+                mi.Strip();
                 mi.Write(outputName);
+                optimizer = new ImageOptimizer();
+                optimizer.LosslessCompress(outputName);
 
-                // Get the size of the file after shrinking
+
+                // Get the size of the file after shrinking;
                 fi = new FileInfo(outputName);
                 afterLength = fi.Length;
 
@@ -96,6 +102,11 @@ namespace AllShrink
                     listViewMain.Items.Add(item);
                 }
             }
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormAbout().Show(); 
         }
     }
 }
