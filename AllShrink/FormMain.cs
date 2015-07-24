@@ -21,17 +21,14 @@ namespace AllShrink
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //string[] files = System.IO.Directory.GetFiles("C:/test");
             DirectoryInfo di = new DirectoryInfo("C:/test");
             FileInfo[] fi = di.GetFiles();
 
-           
             for (int x = 0; x < fi.Length; x++)
             {
                 ListViewItem item = new ListViewItem(new string[] { fi[x].FullName, fi[x].Length / 1024 + " KB", "" });
                 listViewMain.Items.Add(item);
             }
-
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -41,17 +38,32 @@ namespace AllShrink
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            //Console.WriteLine(listViewMain.Items[0].ToString());
-            //MagickImage img = new MagickImage();
+            long beforeLength;
+            long afterLength;
+            float savings;
+            string outputName;
+            MagickImage mi;
+            FileInfo fi;
 
             foreach (ListViewItem file in listViewMain.Items)
             {
-                //Console.WriteLine(file.Text);
-                MagickImage img = new MagickImage(file.Text);
-                img.Resize(200, 200);
+                // Get the size of the file before shrinking
+                fi = new FileInfo(file.Text);
+                beforeLength = fi.Length;
 
-                img.Write(file.Text.Insert(file.Text.LastIndexOf('.'), "_resized"));
-                file.SubItems[2].Text = "12%";
+                // Resize and optimize the image
+                mi = new MagickImage(file.Text);
+                mi.Resize(200, 200);
+                outputName = file.Text.Insert(file.Text.LastIndexOf('.'), "_resized");
+                mi.Write(outputName);
+
+                // Get the size of the file after shrinking
+                fi = new FileInfo(outputName);
+                afterLength = fi.Length;
+
+                // Calculate and display the savings
+                savings = (1 - (float)afterLength / beforeLength) * 100;
+                file.SubItems[2].Text = savings.ToString("p1");
             }
         }
 
@@ -63,16 +75,48 @@ namespace AllShrink
             }
         }
 
+        void addItem()
+        {
+
+        }
+
         void listViewMain_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
+            foreach (string s in files)
+            {
+                
+                if (Directory.Exists(s))
+                {
+                    foreach (string sub in Directory.GetFiles(s))
+                    {
+                        FileInfo fi = new FileInfo(sub);
+                        ListViewItem item = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
+                        listViewMain.Items.Add(item);
+                    }
+                }
+                else
+                {
+                    //Add filepath
+                    FileInfo fi = new FileInfo(s);
+                    ListViewItem item = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
+                    listViewMain.Items.Add(item);
+                }
+            }
+
+            if (Directory.Exists(files[0]))
+            {
+                Console.WriteLine(files[0]);
+            }
+            /*
             foreach (string file in files)
             {
                 FileInfo fi = new FileInfo(file);
                 ListViewItem item = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
                 listViewMain.Items.Add(item);
-            }
+            }*/
+
         }
     }
 }
