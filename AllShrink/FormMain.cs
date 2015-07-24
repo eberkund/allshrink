@@ -28,7 +28,7 @@ namespace AllShrink
            
             for (int x = 0; x < fi.Length; x++)
             {
-                ListViewItem item = new ListViewItem(new string[] { fi[x].Name, fi[x].Length / 1024 + " KB", "" });
+                ListViewItem item = new ListViewItem(new string[] { fi[x].FullName, fi[x].Length / 1024 + " KB", "" });
                 listViewMain.Items.Add(item);
             }
 
@@ -46,11 +46,13 @@ namespace AllShrink
 
             foreach (ListViewItem file in listViewMain.Items)
             {
-                Console.WriteLine(file.ToString());
+                //Console.WriteLine(file.Text);
+                MagickImage img = new MagickImage(file.Text);
+                img.Resize(200, 200);
+
+                img.Write(file.Text.Insert(file.Text.LastIndexOf('.'), "_resized"));
                 file.SubItems[2].Text = "12%";
             }
-           
-            
         }
 
         void listViewMain_DragEnter(object sender, DragEventArgs e)
@@ -68,7 +70,7 @@ namespace AllShrink
             foreach (string file in files)
             {
                 FileInfo fi = new FileInfo(file);
-                ListViewItem item = new ListViewItem(new string[] { fi.Name, fi.Length / 1024 + " KB", "" });
+                ListViewItem item = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
                 listViewMain.Items.Add(item);
             }
         }

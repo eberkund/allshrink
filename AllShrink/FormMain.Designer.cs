@@ -43,7 +43,7 @@
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonRun = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelDragImages = new System.Windows.Forms.Label();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,13 +72,13 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(161, 30);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(161, 30);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
             this.quitToolStripMenuItem.Text = "Quit";
             // 
             // helpToolStripMenuItem
@@ -179,15 +179,15 @@
             this.buttonRun.UseVisualStyleBackColor = true;
             this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
             // 
-            // label1
+            // labelDragImages
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(136, 624);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Drag images into the area above";
+            this.labelDragImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelDragImages.AutoSize = true;
+            this.labelDragImages.Location = new System.Drawing.Point(136, 624);
+            this.labelDragImages.Name = "labelDragImages";
+            this.labelDragImages.Size = new System.Drawing.Size(239, 20);
+            this.labelDragImages.TabIndex = 5;
+            this.labelDragImages.Text = "Drag images into the area above";
             // 
             // FormMain
             // 
@@ -196,7 +196,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1202, 663);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelDragImages);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonRun);
             this.Controls.Add(this.buttonAdd);
@@ -228,7 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.Button buttonRun;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDragImages;
     }
 }
 
