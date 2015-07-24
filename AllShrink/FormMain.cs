@@ -25,8 +25,6 @@ namespace AllShrink
             DirectoryInfo di = new DirectoryInfo("C:/test");
             FileInfo[] fi = di.GetFiles();
 
-            // FileInfo[] files = System.IO.DirectoryInfo("C:/test").getFiles();
-
            
             for (int x = 0; x < fi.Length; x++)
             {
@@ -57,13 +55,22 @@ namespace AllShrink
 
         void listViewMain_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
         }
 
         void listViewMain_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            foreach (string file in files) Console.WriteLine(file);
+
+            foreach (string file in files)
+            {
+                FileInfo fi = new FileInfo(file);
+                ListViewItem item = new ListViewItem(new string[] { fi.Name, fi.Length / 1024 + " KB", "" });
+                listViewMain.Items.Add(item);
+            }
         }
     }
 }
