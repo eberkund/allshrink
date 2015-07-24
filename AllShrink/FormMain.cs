@@ -34,7 +34,7 @@ namespace AllShrink
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonClear_Click(object sender, EventArgs e)
         {
             listViewMain.Items.Clear();
         }

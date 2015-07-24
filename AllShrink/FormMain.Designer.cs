@@ -40,7 +40,7 @@
             this.columnSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnSavings = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.imageListMain = new System.Windows.Forms.ImageList(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonRun = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,13 +49,14 @@
             // 
             // menuStripMain
             // 
+            this.menuStripMain.GripMargin = new System.Windows.Forms.Padding(2);
             this.menuStripMain.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(706, 33);
+            this.menuStripMain.Size = new System.Drawing.Size(1202, 33);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStripMain";
             // 
@@ -100,15 +101,15 @@
             this.listViewMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listViewMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listViewMain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnFilename,
             this.columnSize,
             this.columnSavings});
             this.listViewMain.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewMain.Location = new System.Drawing.Point(13, 45);
+            this.listViewMain.Location = new System.Drawing.Point(0, 32);
             this.listViewMain.Name = "listViewMain";
-            this.listViewMain.Size = new System.Drawing.Size(681, 298);
+            this.listViewMain.Size = new System.Drawing.Size(1202, 579);
             this.listViewMain.TabIndex = 1;
             this.listViewMain.UseCompatibleStateImageBehavior = false;
             this.listViewMain.View = System.Windows.Forms.View.Details;
@@ -136,25 +137,27 @@
             this.imageListMain.ImageSize = new System.Drawing.Size(16, 16);
             this.imageListMain.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // button1
+            // buttonClear
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.AutoSize = true;
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Location = new System.Drawing.Point(13, 349);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonClear.AutoSize = true;
+            this.buttonClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonClear.Location = new System.Drawing.Point(14, 619);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(5, 5, 5, 500);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(56, 30);
+            this.buttonClear.TabIndex = 2;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonAdd
             // 
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAdd.AutoSize = true;
             this.buttonAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdd.Location = new System.Drawing.Point(75, 349);
+            this.buttonAdd.Location = new System.Drawing.Point(80, 619);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(48, 30);
             this.buttonAdd.TabIndex = 3;
@@ -164,9 +167,11 @@
             // 
             // buttonRun
             // 
+            this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRun.AutoSize = true;
             this.buttonRun.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRun.Location = new System.Drawing.Point(645, 349);
+            this.buttonRun.Location = new System.Drawing.Point(1139, 619);
+            this.buttonRun.Margin = new System.Windows.Forms.Padding(5);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(49, 30);
             this.buttonRun.TabIndex = 4;
@@ -176,22 +181,25 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 359);
+            this.label1.Location = new System.Drawing.Point(136, 624);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(239, 20);
             this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
+            this.label1.Text = "Drag images into the area above";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 391);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1202, 663);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonRun);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.listViewMain);
             this.Controls.Add(this.menuStripMain);
             this.MainMenuStrip = this.menuStripMain;
@@ -210,7 +218,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ListView listViewMain;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.ColumnHeader columnFilename;
         private System.Windows.Forms.ColumnHeader columnSize;
