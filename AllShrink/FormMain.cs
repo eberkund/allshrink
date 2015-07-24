@@ -86,7 +86,6 @@ namespace AllShrink
 
             foreach (string s in files)
             {
-                
                 if (Directory.Exists(s))
                 {
                     foreach (string sub in Directory.GetFiles(s))
@@ -104,19 +103,6 @@ namespace AllShrink
                     listViewMain.Items.Add(item);
                 }
             }
-
-            if (Directory.Exists(files[0]))
-            {
-                Console.WriteLine(files[0]);
-            }
-            /*
-            foreach (string file in files)
-            {
-                FileInfo fi = new FileInfo(file);
-                ListViewItem item = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
-                listViewMain.Items.Add(item);
-            }*/
-
         }
     }
 }
