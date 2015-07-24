@@ -19,7 +19,7 @@ namespace AllShrink
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
             //string[] files = System.IO.Directory.GetFiles("C:/test");
             DirectoryInfo di = new DirectoryInfo("C:/test");
@@ -53,6 +53,17 @@ namespace AllShrink
             }
            
             
+        }
+
+        void listViewMain_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+        void listViewMain_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files) Console.WriteLine(file);
         }
     }
 }
