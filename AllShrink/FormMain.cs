@@ -1,13 +1,6 @@
 ﻿using ImageMagick;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AllShrink
@@ -34,6 +27,11 @@ namespace AllShrink
         private void buttonClear_Click(object sender, EventArgs e)
         {
             listViewMain.Items.Clear();
+        }
+
+        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void buttonRun_Click(object sender, EventArgs e)
