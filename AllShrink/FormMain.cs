@@ -75,11 +75,6 @@ namespace AllShrink
             }
         }
 
-        void addItem()
-        {
-
-        }
-
         void listViewMain_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
@@ -88,6 +83,7 @@ namespace AllShrink
             {
                 if (Directory.Exists(s))
                 {
+                    // If it is a directory, add each file it contains
                     foreach (string sub in Directory.GetFiles(s))
                     {
                         FileInfo fi = new FileInfo(sub);
@@ -97,7 +93,6 @@ namespace AllShrink
                 }
                 else
                 {
-                    //Add filepath
                     FileInfo fi = new FileInfo(s);
                     ListViewItem item = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
                     listViewMain.Items.Add(item);
