@@ -15,7 +15,9 @@ namespace AllShrink
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            DialogResult result = open.ShowDialog();
+            open.Multiselect = true;
+            open.ShowDialog();
+
             addCurrentDirectoryFiles(open.FileNames);
         }
 
@@ -94,6 +96,7 @@ namespace AllShrink
 
         void addCurrentDirectoryFiles(string[] paths)
         {
+            // Given an array of paths, so add each one
             foreach (string path in paths)
             {
                 addCurrentDirectoryFiles(path);
