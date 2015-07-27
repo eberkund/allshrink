@@ -45,5 +45,12 @@ namespace AllShrink
                 buttonBrowse.Enabled = true;
             }
         }
+
+        private void buttonBrowse_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog open = new FolderBrowserDialog();
+            DialogResult result = open.ShowDialog();
+            labelOutputPath.Text = open.SelectedPath;
+        }
     }
 }

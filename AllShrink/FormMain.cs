@@ -16,8 +16,7 @@ namespace AllShrink
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Multiselect = true;
-            open.ShowDialog();
-
+            DialogResult result = open.ShowDialog();
             addCurrentDirectoryFiles(open.FileNames);
         }
 

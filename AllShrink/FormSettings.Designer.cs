@@ -40,13 +40,13 @@
             this.trackBarQuality = new System.Windows.Forms.TrackBar();
             this.labelQuality = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxOutput = new System.Windows.Forms.GroupBox();
             this.labelOutputPath = new System.Windows.Forms.Label();
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.checkBoxOverwrite = new System.Windows.Forms.CheckBox();
             this.groupBoxResizing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxOutput.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkBoxStripMeta
@@ -180,17 +180,18 @@
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // groupBoxOutput
             // 
-            this.groupBox1.Controls.Add(this.labelOutputPath);
-            this.groupBox1.Controls.Add(this.buttonBrowse);
-            this.groupBox1.Controls.Add(this.checkBoxOverwrite);
-            this.groupBox1.Location = new System.Drawing.Point(15, 136);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 116);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Output";
+            this.groupBoxOutput.Controls.Add(this.labelOutputPath);
+            this.groupBoxOutput.Controls.Add(this.buttonBrowse);
+            this.groupBoxOutput.Controls.Add(this.checkBoxOverwrite);
+            this.groupBoxOutput.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxOutput.Location = new System.Drawing.Point(15, 123);
+            this.groupBoxOutput.Name = "groupBoxOutput";
+            this.groupBoxOutput.Size = new System.Drawing.Size(958, 116);
+            this.groupBoxOutput.TabIndex = 10;
+            this.groupBoxOutput.TabStop = false;
+            this.groupBoxOutput.Text = "Output";
             // 
             // labelOutputPath
             // 
@@ -212,6 +213,7 @@
             this.buttonBrowse.TabIndex = 2;
             this.buttonBrowse.Text = "Browse";
             this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
             // 
             // checkBoxOverwrite
             // 
@@ -231,7 +233,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 747);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxOutput);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelQuality);
             this.Controls.Add(this.trackBarQuality);
@@ -243,8 +245,8 @@
             this.groupBoxResizing.ResumeLayout(false);
             this.groupBoxResizing.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxOutput.ResumeLayout(false);
+            this.groupBoxOutput.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,7 +266,7 @@
         private System.Windows.Forms.TrackBar trackBarQuality;
         private System.Windows.Forms.Label labelQuality;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxOutput;
         private System.Windows.Forms.Button buttonBrowse;
         private System.Windows.Forms.CheckBox checkBoxOverwrite;
         private System.Windows.Forms.Label labelOutputPath;
