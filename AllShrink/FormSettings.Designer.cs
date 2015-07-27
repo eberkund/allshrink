@@ -39,6 +39,7 @@
             this.checkBoxResize = new System.Windows.Forms.CheckBox();
             this.trackBarQuality = new System.Windows.Forms.TrackBar();
             this.labelQuality = new System.Windows.Forms.Label();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.groupBoxResizing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).BeginInit();
             this.SuspendLayout();
@@ -165,11 +166,24 @@
             this.labelQuality.TabIndex = 8;
             this.labelQuality.Text = "Quality";
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.AutoSize = true;
+            this.buttonSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonSave.Location = new System.Drawing.Point(527, 271);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(55, 30);
+            this.buttonSave.TabIndex = 9;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 319);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelQuality);
             this.Controls.Add(this.trackBarQuality);
             this.Controls.Add(this.groupBoxResizing);
@@ -199,5 +213,6 @@
         private System.Windows.Forms.CheckBox checkBoxResize;
         private System.Windows.Forms.TrackBar trackBarQuality;
         private System.Windows.Forms.Label labelQuality;
+        private System.Windows.Forms.Button buttonSave;
     }
 }
