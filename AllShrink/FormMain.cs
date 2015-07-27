@@ -33,6 +33,7 @@ namespace AllShrink
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
+            int index;
             long beforeLength;
             long afterLength;
             float savings;
@@ -41,15 +42,15 @@ namespace AllShrink
             MagickImage mi;
             FileInfo fi;
 
-            foreach (ListViewItem file in listViewMain.Items)
+            foreach (ListViewItem listedImage in listViewMain.Items)
             {
                 // Get the size of the file before shrinking
-                fi = new FileInfo(file.Text);
+                fi = new FileInfo(listedImage.Text);
                 beforeLength = fi.Length;
 
                 // Resize and optimize the image
-                outputName = file.Text.Insert(file.Text.LastIndexOf('.'), "_resized");
-                mi = new MagickImage(file.Text);
+                outputName = listedImage.Text.Insert(listedImage.Text.LastIndexOf('.'), "_resized");
+                mi = new MagickImage(listedImage.Text);
                 mi.Resize(200, 200);
                 mi.Interlace = Interlace.Jpeg;
                 mi.Strip();
@@ -63,7 +64,9 @@ namespace AllShrink
 
                 // Calculate and display the savings
                 savings = (1 - (float)afterLength / beforeLength) * 100;
-                file.SubItems[2].Text = savings.ToString("p1");
+                listedImage.SubItems[2].Text = savings.ToString("p1");
+                index = listViewMain.Columns["columnSavings"].Index;
+                listViewMain.Items[1].SubItems[index].Text = savings.ToString("p1");
             }
         }
 

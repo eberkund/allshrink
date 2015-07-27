@@ -35,19 +35,24 @@
             this.labelHeight = new System.Windows.Forms.Label();
             this.groupBoxResizing = new System.Windows.Forms.GroupBox();
             this.radioButtonPercent = new System.Windows.Forms.RadioButton();
-            this.radioButtonPixels = new System.Windows.Forms.RadioButton();
             this.checkBoxResize = new System.Windows.Forms.CheckBox();
+            this.radioButtonPixels = new System.Windows.Forms.RadioButton();
             this.trackBarQuality = new System.Windows.Forms.TrackBar();
             this.labelQuality = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelOutputPath = new System.Windows.Forms.Label();
+            this.buttonBrowse = new System.Windows.Forms.Button();
+            this.checkBoxOverwrite = new System.Windows.Forms.CheckBox();
             this.groupBoxResizing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // checkBoxStripMeta
             // 
             this.checkBoxStripMeta.AutoSize = true;
-            this.checkBoxStripMeta.Location = new System.Drawing.Point(15, 159);
+            this.checkBoxStripMeta.Location = new System.Drawing.Point(26, 564);
             this.checkBoxStripMeta.Name = "checkBoxStripMeta";
             this.checkBoxStripMeta.Size = new System.Drawing.Size(186, 24);
             this.checkBoxStripMeta.TabIndex = 0;
@@ -57,7 +62,7 @@
             // textBoxWidth
             // 
             this.textBoxWidth.Enabled = false;
-            this.textBoxWidth.Location = new System.Drawing.Point(39, 76);
+            this.textBoxWidth.Location = new System.Drawing.Point(42, 60);
             this.textBoxWidth.Name = "textBoxWidth";
             this.textBoxWidth.Size = new System.Drawing.Size(100, 26);
             this.textBoxWidth.TabIndex = 2;
@@ -65,17 +70,16 @@
             // textBoxHeight
             // 
             this.textBoxHeight.Enabled = false;
-            this.textBoxHeight.Location = new System.Drawing.Point(172, 76);
+            this.textBoxHeight.Location = new System.Drawing.Point(168, 60);
             this.textBoxHeight.Name = "textBoxHeight";
             this.textBoxHeight.Size = new System.Drawing.Size(100, 26);
             this.textBoxHeight.TabIndex = 3;
-            this.textBoxHeight.TextChanged += new System.EventHandler(this.textBoxHeight_TextChanged);
             // 
             // labelWidth
             // 
             this.labelWidth.AutoSize = true;
             this.labelWidth.Enabled = false;
-            this.labelWidth.Location = new System.Drawing.Point(9, 79);
+            this.labelWidth.Location = new System.Drawing.Point(18, 64);
             this.labelWidth.Name = "labelWidth";
             this.labelWidth.Size = new System.Drawing.Size(24, 20);
             this.labelWidth.TabIndex = 4;
@@ -85,12 +89,11 @@
             // 
             this.labelHeight.AutoSize = true;
             this.labelHeight.Enabled = false;
-            this.labelHeight.Location = new System.Drawing.Point(145, 79);
+            this.labelHeight.Location = new System.Drawing.Point(146, 64);
             this.labelHeight.Name = "labelHeight";
             this.labelHeight.Size = new System.Drawing.Size(21, 20);
             this.labelHeight.TabIndex = 5;
             this.labelHeight.Text = "H";
-            this.labelHeight.Click += new System.EventHandler(this.labelHeight_Click);
             // 
             // groupBoxResizing
             // 
@@ -107,40 +110,26 @@
             this.groupBoxResizing.Location = new System.Drawing.Point(15, 15);
             this.groupBoxResizing.Name = "groupBoxResizing";
             this.groupBoxResizing.Padding = new System.Windows.Forms.Padding(20, 10, 10, 0);
-            this.groupBoxResizing.Size = new System.Drawing.Size(570, 124);
+            this.groupBoxResizing.Size = new System.Drawing.Size(958, 108);
             this.groupBoxResizing.TabIndex = 6;
             this.groupBoxResizing.TabStop = false;
             this.groupBoxResizing.Text = "Resizing";
-            this.groupBoxResizing.Enter += new System.EventHandler(this.groupBoxResizing_Enter);
             // 
             // radioButtonPercent
             // 
             this.radioButtonPercent.AutoSize = true;
             this.radioButtonPercent.Enabled = false;
-            this.radioButtonPercent.Location = new System.Drawing.Point(334, 77);
+            this.radioButtonPercent.Location = new System.Drawing.Point(322, 62);
             this.radioButtonPercent.Name = "radioButtonPercent";
             this.radioButtonPercent.Size = new System.Drawing.Size(48, 24);
             this.radioButtonPercent.TabIndex = 7;
-            this.radioButtonPercent.TabStop = true;
             this.radioButtonPercent.Text = "%";
             this.radioButtonPercent.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonPixels
-            // 
-            this.radioButtonPixels.AutoSize = true;
-            this.radioButtonPixels.Enabled = false;
-            this.radioButtonPixels.Location = new System.Drawing.Point(278, 77);
-            this.radioButtonPixels.Name = "radioButtonPixels";
-            this.radioButtonPixels.Size = new System.Drawing.Size(50, 24);
-            this.radioButtonPixels.TabIndex = 6;
-            this.radioButtonPixels.TabStop = true;
-            this.radioButtonPixels.Text = "px";
-            this.radioButtonPixels.UseVisualStyleBackColor = true;
             // 
             // checkBoxResize
             // 
             this.checkBoxResize.AutoSize = true;
-            this.checkBoxResize.Location = new System.Drawing.Point(13, 32);
+            this.checkBoxResize.Location = new System.Drawing.Point(20, 30);
             this.checkBoxResize.Name = "checkBoxResize";
             this.checkBoxResize.Size = new System.Drawing.Size(139, 24);
             this.checkBoxResize.TabIndex = 7;
@@ -148,9 +137,22 @@
             this.checkBoxResize.UseVisualStyleBackColor = true;
             this.checkBoxResize.CheckedChanged += new System.EventHandler(this.checkBoxResize_CheckedChanged);
             // 
+            // radioButtonPixels
+            // 
+            this.radioButtonPixels.AutoSize = true;
+            this.radioButtonPixels.Checked = true;
+            this.radioButtonPixels.Enabled = false;
+            this.radioButtonPixels.Location = new System.Drawing.Point(272, 62);
+            this.radioButtonPixels.Name = "radioButtonPixels";
+            this.radioButtonPixels.Size = new System.Drawing.Size(50, 24);
+            this.radioButtonPixels.TabIndex = 6;
+            this.radioButtonPixels.TabStop = true;
+            this.radioButtonPixels.Text = "px";
+            this.radioButtonPixels.UseVisualStyleBackColor = true;
+            // 
             // trackBarQuality
             // 
-            this.trackBarQuality.Location = new System.Drawing.Point(74, 219);
+            this.trackBarQuality.Location = new System.Drawing.Point(91, 604);
             this.trackBarQuality.Maximum = 11;
             this.trackBarQuality.Name = "trackBarQuality";
             this.trackBarQuality.Size = new System.Drawing.Size(266, 69);
@@ -160,7 +162,7 @@
             // labelQuality
             // 
             this.labelQuality.AutoSize = true;
-            this.labelQuality.Location = new System.Drawing.Point(11, 219);
+            this.labelQuality.Location = new System.Drawing.Point(29, 623);
             this.labelQuality.Name = "labelQuality";
             this.labelQuality.Size = new System.Drawing.Size(57, 20);
             this.labelQuality.TabIndex = 8;
@@ -171,18 +173,65 @@
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.AutoSize = true;
             this.buttonSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSave.Location = new System.Drawing.Point(527, 271);
+            this.buttonSave.Location = new System.Drawing.Point(915, 699);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(55, 30);
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.labelOutputPath);
+            this.groupBox1.Controls.Add(this.buttonBrowse);
+            this.groupBox1.Controls.Add(this.checkBoxOverwrite);
+            this.groupBox1.Location = new System.Drawing.Point(15, 136);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(958, 116);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Output";
+            // 
+            // labelOutputPath
+            // 
+            this.labelOutputPath.AutoSize = true;
+            this.labelOutputPath.Location = new System.Drawing.Point(98, 73);
+            this.labelOutputPath.Name = "labelOutputPath";
+            this.labelOutputPath.Size = new System.Drawing.Size(74, 20);
+            this.labelOutputPath.TabIndex = 3;
+            this.labelOutputPath.Text = "C:\\output";
+            // 
+            // buttonBrowse
+            // 
+            this.buttonBrowse.AutoSize = true;
+            this.buttonBrowse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonBrowse.Enabled = false;
+            this.buttonBrowse.Location = new System.Drawing.Point(20, 68);
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Size = new System.Drawing.Size(72, 30);
+            this.buttonBrowse.TabIndex = 2;
+            this.buttonBrowse.Text = "Browse";
+            this.buttonBrowse.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxOverwrite
+            // 
+            this.checkBoxOverwrite.AutoSize = true;
+            this.checkBoxOverwrite.Checked = true;
+            this.checkBoxOverwrite.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxOverwrite.Location = new System.Drawing.Point(20, 38);
+            this.checkBoxOverwrite.Name = "checkBoxOverwrite";
+            this.checkBoxOverwrite.Size = new System.Drawing.Size(172, 24);
+            this.checkBoxOverwrite.TabIndex = 0;
+            this.checkBoxOverwrite.Text = "Overwrite input files";
+            this.checkBoxOverwrite.UseVisualStyleBackColor = true;
+            this.checkBoxOverwrite.CheckedChanged += new System.EventHandler(this.checkBoxOverwrite_CheckedChanged);
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 319);
+            this.ClientSize = new System.Drawing.Size(988, 747);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelQuality);
             this.Controls.Add(this.trackBarQuality);
@@ -191,10 +240,11 @@
             this.Name = "FormSettings";
             this.Padding = new System.Windows.Forms.Padding(15);
             this.Text = "Settings";
-            this.Load += new System.EventHandler(this.FormSettings_Load);
             this.groupBoxResizing.ResumeLayout(false);
             this.groupBoxResizing.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +264,9 @@
         private System.Windows.Forms.TrackBar trackBarQuality;
         private System.Windows.Forms.Label labelQuality;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button buttonBrowse;
+        private System.Windows.Forms.CheckBox checkBoxOverwrite;
+        private System.Windows.Forms.Label labelOutputPath;
     }
 }

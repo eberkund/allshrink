@@ -10,31 +10,6 @@ namespace AllShrink
             InitializeComponent();
         }
 
-        private void FormSettings_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxHeight_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBoxResizing_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelHeight_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void checkBoxResize_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxResize.Checked)
@@ -54,6 +29,20 @@ namespace AllShrink
                 labelHeight.Enabled = false;
                 radioButtonPixels.Enabled = false;
                 radioButtonPercent.Enabled = false;
+            }
+        }
+
+        private void checkBoxOverwrite_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxOverwrite.Checked)
+            {
+                labelOutputPath.Enabled = false;
+                buttonBrowse.Enabled = false;
+            }
+            else
+            {
+                labelOutputPath.Enabled = true;
+                buttonBrowse.Enabled = true;
             }
         }
     }

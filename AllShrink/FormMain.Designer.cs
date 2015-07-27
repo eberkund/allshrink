@@ -45,8 +45,6 @@
             this.buttonRun = new System.Windows.Forms.Button();
             this.labelDragImages = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +73,7 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -83,7 +81,7 @@
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
             this.quitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
@@ -98,7 +96,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(147, 30);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -196,12 +194,6 @@
             this.labelDragImages.TabIndex = 5;
             this.labelDragImages.Text = "Drag images into the area above";
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -243,8 +235,6 @@
         private System.Windows.Forms.Button buttonRun;
         private System.Windows.Forms.Label labelDragImages;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
