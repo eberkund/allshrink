@@ -44,6 +44,7 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonRun = new System.Windows.Forms.Button();
             this.labelDragImages = new System.Windows.Forms.Label();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -233,6 +234,7 @@
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
         private System.Windows.Forms.Button buttonRun;
         private System.Windows.Forms.Label labelDragImages;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

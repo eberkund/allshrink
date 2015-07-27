@@ -14,14 +14,9 @@ namespace AllShrink
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            DirectoryInfo di = new DirectoryInfo("C:/test");
-            FileInfo[] fi = di.GetFiles();
-
-            for (int x = 0; x < fi.Length; x++)
-            {
-                ListViewItem item = new ListViewItem(new string[] { fi[x].FullName, fi[x].Length / 1024 + " KB", "" });
-                listViewMain.Items.Add(item);
-            }
+            OpenFileDialog open = new OpenFileDialog();
+            DialogResult result = open.ShowDialog();
+            addCurrentDirectoryFiles(open.FileNames);
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -60,7 +55,6 @@ namespace AllShrink
                 optimizer = new ImageOptimizer();
                 optimizer.LosslessCompress(outputName);
 
-
                 // Get the size of the file after shrinking;
                 fi = new FileInfo(outputName);
                 afterLength = fi.Length;
@@ -79,22 +73,31 @@ namespace AllShrink
             }
         }
 
-        void addCurrentDirectoryFiles(string dir) 
+        void addCurrentDirectoryFiles(string path) 
         {
-            Console.WriteLine(dir);
-            foreach (string sub in Directory.GetFileSystemEntries(dir))
+            // Is the path a directory?
+            if (Directory.Exists(path))
             {
-                if (Directory.Exists(sub))
+                foreach (string sub in Directory.GetFileSystemEntries(path))
                 {
                     addCurrentDirectoryFiles(sub);
                 }
-                else
-                {
-                    FileInfo fi = new FileInfo(sub);
-                    ListViewItem lvi = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
-                    listViewMain.Items.Add(lvi);
-                }
-            }  
+            }
+            // Otherwise it is a file
+            else
+            {
+                FileInfo fi = new FileInfo(path);
+                ListViewItem lvi = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
+                listViewMain.Items.Add(lvi);
+            }
+        }
+
+        void addCurrentDirectoryFiles(string[] paths)
+        {
+            foreach (string path in paths)
+            {
+                addCurrentDirectoryFiles(path);
+            }
         }
 
         void listViewMain_DragDrop(object sender, DragEventArgs e)
