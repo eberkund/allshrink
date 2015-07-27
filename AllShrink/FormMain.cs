@@ -75,7 +75,7 @@ namespace AllShrink
 
         void addCurrentDirectoryFiles(string path) 
         {
-            // Is the path a directory?
+            // Directory or file?
             if (Directory.Exists(path))
             {
                 foreach (string sub in Directory.GetFileSystemEntries(path))
@@ -83,11 +83,11 @@ namespace AllShrink
                     addCurrentDirectoryFiles(sub);
                 }
             }
-            // Otherwise it is a file
             else
             {
                 FileInfo fi = new FileInfo(path);
-                ListViewItem lvi = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
+                string[] data = { fi.FullName, fi.Length / 1024 + " KB", "" };
+                ListViewItem lvi = new ListViewItem(data);
                 listViewMain.Items.Add(lvi);
             }
         }
@@ -102,13 +102,8 @@ namespace AllShrink
 
         void listViewMain_DragDrop(object sender, DragEventArgs e)
         {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-            foreach (string path in files)
-            {
-                Console.WriteLine(path);
-                addCurrentDirectoryFiles(path);
-            }
+            string[] paths = (string[])e.Data.GetData(DataFormats.FileDrop);
+            addCurrentDirectoryFiles(paths);
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
