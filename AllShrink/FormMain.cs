@@ -79,34 +79,43 @@ namespace AllShrink
             }
         }
 
+        void addCurrentDirectoryFiles(string dir) 
+        {
+            Console.WriteLine(dir);
+            foreach (string sub in Directory.GetFileSystemEntries(dir))
+            {
+                if (Directory.Exists(sub))
+                {
+                    addCurrentDirectoryFiles(sub);
+                }
+                else
+                {
+                    FileInfo fi = new FileInfo(sub);
+                    ListViewItem lvi = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
+                    listViewMain.Items.Add(lvi);
+                }
+            }  
+        }
+
         void listViewMain_DragDrop(object sender, DragEventArgs e)
         {
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
 
-            foreach (string s in files)
+            foreach (string path in files)
             {
-                if (Directory.Exists(s))
-                {
-                    // If it is a directory, add each file it contains
-                    foreach (string sub in Directory.GetFiles(s))
-                    {
-                        FileInfo fi = new FileInfo(sub);
-                        ListViewItem item = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
-                        listViewMain.Items.Add(item);
-                    }
-                }
-                else
-                {
-                    FileInfo fi = new FileInfo(s);
-                    ListViewItem item = new ListViewItem(new string[] { fi.FullName, fi.Length / 1024 + " KB", "" });
-                    listViewMain.Items.Add(item);
-                }
+                Console.WriteLine(path);
+                addCurrentDirectoryFiles(path);
             }
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FormAbout().Show(); 
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormSettings().Show();
         }
     }
 }
