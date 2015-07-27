@@ -44,6 +44,7 @@
             this.labelOutputPath = new System.Windows.Forms.Label();
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.checkBoxOverwrite = new System.Windows.Forms.CheckBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBoxResizing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).BeginInit();
             this.groupBoxOutput.SuspendLayout();
@@ -228,20 +229,33 @@
             this.checkBoxOverwrite.UseVisualStyleBackColor = true;
             this.checkBoxOverwrite.CheckedChanged += new System.EventHandler(this.checkBoxOverwrite_CheckedChanged);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(337, 353);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 11;
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 747);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.groupBoxOutput);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.labelQuality);
             this.Controls.Add(this.trackBarQuality);
             this.Controls.Add(this.groupBoxResizing);
             this.Controls.Add(this.checkBoxStripMeta);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormSettings";
             this.Padding = new System.Windows.Forms.Padding(15);
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Settings";
+            this.TopMost = true;
             this.groupBoxResizing.ResumeLayout(false);
             this.groupBoxResizing.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).EndInit();
@@ -270,5 +284,6 @@
         private System.Windows.Forms.Button buttonBrowse;
         private System.Windows.Forms.CheckBox checkBoxOverwrite;
         private System.Windows.Forms.Label labelOutputPath;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
