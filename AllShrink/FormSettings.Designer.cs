@@ -37,7 +37,10 @@
             this.radioButtonPercent = new System.Windows.Forms.RadioButton();
             this.radioButtonPixels = new System.Windows.Forms.RadioButton();
             this.checkBoxResize = new System.Windows.Forms.CheckBox();
+            this.trackBarQuality = new System.Windows.Forms.TrackBar();
+            this.labelQuality = new System.Windows.Forms.Label();
             this.groupBoxResizing.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).BeginInit();
             this.SuspendLayout();
             // 
             // checkBoxStripMeta
@@ -144,11 +147,31 @@
             this.checkBoxResize.UseVisualStyleBackColor = true;
             this.checkBoxResize.CheckedChanged += new System.EventHandler(this.checkBoxResize_CheckedChanged);
             // 
+            // trackBarQuality
+            // 
+            this.trackBarQuality.Location = new System.Drawing.Point(74, 219);
+            this.trackBarQuality.Maximum = 11;
+            this.trackBarQuality.Name = "trackBarQuality";
+            this.trackBarQuality.Size = new System.Drawing.Size(266, 69);
+            this.trackBarQuality.TabIndex = 7;
+            this.trackBarQuality.Value = 11;
+            // 
+            // labelQuality
+            // 
+            this.labelQuality.AutoSize = true;
+            this.labelQuality.Location = new System.Drawing.Point(11, 219);
+            this.labelQuality.Name = "labelQuality";
+            this.labelQuality.Size = new System.Drawing.Size(57, 20);
+            this.labelQuality.TabIndex = 8;
+            this.labelQuality.Text = "Quality";
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 319);
+            this.Controls.Add(this.labelQuality);
+            this.Controls.Add(this.trackBarQuality);
             this.Controls.Add(this.groupBoxResizing);
             this.Controls.Add(this.checkBoxStripMeta);
             this.Name = "FormSettings";
@@ -157,6 +180,7 @@
             this.Load += new System.EventHandler(this.FormSettings_Load);
             this.groupBoxResizing.ResumeLayout(false);
             this.groupBoxResizing.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +197,7 @@
         private System.Windows.Forms.RadioButton radioButtonPercent;
         private System.Windows.Forms.RadioButton radioButtonPixels;
         private System.Windows.Forms.CheckBox checkBoxResize;
+        private System.Windows.Forms.TrackBar trackBarQuality;
+        private System.Windows.Forms.Label labelQuality;
     }
 }

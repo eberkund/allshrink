@@ -45,6 +45,7 @@
             this.buttonRun = new System.Windows.Forms.Button();
             this.labelDragImages = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -235,6 +236,7 @@
         private System.Windows.Forms.Button buttonRun;
         private System.Windows.Forms.Label labelDragImages;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 
