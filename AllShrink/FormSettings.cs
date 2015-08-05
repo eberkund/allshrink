@@ -8,6 +8,16 @@ namespace AllShrink
         public FormSettings()
         {
             InitializeComponent();
+            loadSettings();
+        }
+
+        private void loadSettings()
+        {
+            textBoxWidth.Text = Properties.Settings.Default.maxWidth.ToString();
+            textBoxHeight.Text = Properties.Settings.Default.maxHeight.ToString();
+            checkBoxResize.Checked = Properties.Settings.Default.resizeImages;
+            checkBoxOverwrite.Checked = Properties.Settings.Default.overwriteFiles;
+            trackBarQuality.Value = Properties.Settings.Default.quality;
         }
 
         private void checkBoxResize_CheckedChanged(object sender, EventArgs e)
@@ -51,6 +61,16 @@ namespace AllShrink
             FolderBrowserDialog open = new FolderBrowserDialog();
             DialogResult result = open.ShowDialog();
             labelOutputPath.Text = open.SelectedPath;
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.maxWidth = Int16.Parse(textBoxWidth.Text);
+            Properties.Settings.Default.maxHeight = Int16.Parse(textBoxHeight.Text);
+            Properties.Settings.Default.resizeImages = checkBoxResize.Checked;
+            Properties.Settings.Default.overwriteFiles = checkBoxResize.Checked;
+            Properties.Settings.Default.quality = trackBarQuality.Value;
+            Properties.Settings.Default.Save();
         }
     }
 }

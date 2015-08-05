@@ -45,7 +45,9 @@
             this.buttonRun = new System.Windows.Forms.Button();
             this.labelDragImages = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStripMain.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripMain
@@ -112,9 +114,10 @@
             this.columnSize,
             this.columnSavings});
             this.listViewMain.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listViewMain.Location = new System.Drawing.Point(0, 32);
+            this.listViewMain.Location = new System.Drawing.Point(0, 33);
+            this.listViewMain.Margin = new System.Windows.Forms.Padding(0);
             this.listViewMain.Name = "listViewMain";
-            this.listViewMain.Size = new System.Drawing.Size(1202, 545);
+            this.listViewMain.Size = new System.Drawing.Size(1202, 580);
             this.listViewMain.TabIndex = 1;
             this.listViewMain.UseCompatibleStateImageBehavior = false;
             this.listViewMain.View = System.Windows.Forms.View.Details;
@@ -147,7 +150,7 @@
             this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonClear.AutoSize = true;
             this.buttonClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonClear.Location = new System.Drawing.Point(14, 595);
+            this.buttonClear.Location = new System.Drawing.Point(14, 16);
             this.buttonClear.Margin = new System.Windows.Forms.Padding(5, 5, 5, 500);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(56, 30);
@@ -161,7 +164,7 @@
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAdd.AutoSize = true;
             this.buttonAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdd.Location = new System.Drawing.Point(80, 595);
+            this.buttonAdd.Location = new System.Drawing.Point(80, 16);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(48, 30);
@@ -175,7 +178,7 @@
             this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRun.AutoSize = true;
             this.buttonRun.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRun.Location = new System.Drawing.Point(1139, 595);
+            this.buttonRun.Location = new System.Drawing.Point(1139, 16);
             this.buttonRun.Margin = new System.Windows.Forms.Padding(5);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(49, 30);
@@ -188,30 +191,44 @@
             // 
             this.labelDragImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelDragImages.AutoSize = true;
-            this.labelDragImages.Location = new System.Drawing.Point(136, 600);
+            this.labelDragImages.Location = new System.Drawing.Point(136, 21);
             this.labelDragImages.Name = "labelDragImages";
             this.labelDragImages.Size = new System.Drawing.Size(239, 20);
             this.labelDragImages.TabIndex = 5;
             this.labelDragImages.Text = "Drag images into the area above";
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.buttonRun);
+            this.panel1.Controls.Add(this.labelDragImages);
+            this.panel1.Controls.Add(this.buttonClear);
+            this.panel1.Controls.Add(this.buttonAdd);
+            this.panel1.Location = new System.Drawing.Point(0, 613);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1202, 60);
+            this.panel1.TabIndex = 6;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1202, 663);
-            this.Controls.Add(this.labelDragImages);
-            this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.buttonRun);
-            this.Controls.Add(this.buttonAdd);
+            this.ClientSize = new System.Drawing.Size(1202, 673);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.listViewMain);
             this.Controls.Add(this.menuStripMain);
             this.MainMenuStrip = this.menuStripMain;
+            this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "FormMain";
             this.Text = "AllShrink";
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,6 +252,7 @@
         private System.Windows.Forms.Button buttonRun;
         private System.Windows.Forms.Label labelDragImages;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

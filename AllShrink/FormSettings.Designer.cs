@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBoxStripMeta = new System.Windows.Forms.CheckBox();
             this.textBoxWidth = new System.Windows.Forms.TextBox();
             this.textBoxHeight = new System.Windows.Forms.TextBox();
             this.labelWidth = new System.Windows.Forms.Label();
@@ -44,26 +43,23 @@
             this.labelOutputPath = new System.Windows.Forms.Label();
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.checkBoxOverwrite = new System.Windows.Forms.CheckBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelOutput = new System.Windows.Forms.Panel();
+            this.panelResizing = new System.Windows.Forms.Panel();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.groupBoxCompression = new System.Windows.Forms.GroupBox();
+            this.checkBoxStrip = new System.Windows.Forms.CheckBox();
             this.groupBoxResizing.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).BeginInit();
             this.groupBoxOutput.SuspendLayout();
+            this.panelOutput.SuspendLayout();
+            this.panelResizing.SuspendLayout();
+            this.groupBoxCompression.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // checkBoxStripMeta
-            // 
-            this.checkBoxStripMeta.AutoSize = true;
-            this.checkBoxStripMeta.Location = new System.Drawing.Point(26, 564);
-            this.checkBoxStripMeta.Name = "checkBoxStripMeta";
-            this.checkBoxStripMeta.Size = new System.Drawing.Size(186, 24);
-            this.checkBoxStripMeta.TabIndex = 0;
-            this.checkBoxStripMeta.Text = "Strip JPEG metadata";
-            this.checkBoxStripMeta.UseVisualStyleBackColor = true;
             // 
             // textBoxWidth
             // 
             this.textBoxWidth.Enabled = false;
-            this.textBoxWidth.Location = new System.Drawing.Point(42, 60);
+            this.textBoxWidth.Location = new System.Drawing.Point(46, 56);
             this.textBoxWidth.Name = "textBoxWidth";
             this.textBoxWidth.Size = new System.Drawing.Size(100, 26);
             this.textBoxWidth.TabIndex = 2;
@@ -71,7 +67,7 @@
             // textBoxHeight
             // 
             this.textBoxHeight.Enabled = false;
-            this.textBoxHeight.Location = new System.Drawing.Point(168, 60);
+            this.textBoxHeight.Location = new System.Drawing.Point(179, 56);
             this.textBoxHeight.Name = "textBoxHeight";
             this.textBoxHeight.Size = new System.Drawing.Size(100, 26);
             this.textBoxHeight.TabIndex = 3;
@@ -80,7 +76,8 @@
             // 
             this.labelWidth.AutoSize = true;
             this.labelWidth.Enabled = false;
-            this.labelWidth.Location = new System.Drawing.Point(18, 64);
+            this.labelWidth.Location = new System.Drawing.Point(16, 59);
+            this.labelWidth.Margin = new System.Windows.Forms.Padding(3);
             this.labelWidth.Name = "labelWidth";
             this.labelWidth.Size = new System.Drawing.Size(24, 20);
             this.labelWidth.TabIndex = 4;
@@ -90,7 +87,7 @@
             // 
             this.labelHeight.AutoSize = true;
             this.labelHeight.Enabled = false;
-            this.labelHeight.Location = new System.Drawing.Point(146, 64);
+            this.labelHeight.Location = new System.Drawing.Point(152, 59);
             this.labelHeight.Name = "labelHeight";
             this.labelHeight.Size = new System.Drawing.Size(21, 20);
             this.labelHeight.TabIndex = 5;
@@ -102,16 +99,16 @@
             this.groupBoxResizing.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxResizing.Controls.Add(this.radioButtonPercent);
             this.groupBoxResizing.Controls.Add(this.checkBoxResize);
-            this.groupBoxResizing.Controls.Add(this.labelWidth);
-            this.groupBoxResizing.Controls.Add(this.radioButtonPixels);
-            this.groupBoxResizing.Controls.Add(this.textBoxWidth);
             this.groupBoxResizing.Controls.Add(this.labelHeight);
+            this.groupBoxResizing.Controls.Add(this.radioButtonPixels);
             this.groupBoxResizing.Controls.Add(this.textBoxHeight);
-            this.groupBoxResizing.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxResizing.Location = new System.Drawing.Point(15, 15);
+            this.groupBoxResizing.Controls.Add(this.labelWidth);
+            this.groupBoxResizing.Controls.Add(this.textBoxWidth);
+            this.groupBoxResizing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxResizing.Location = new System.Drawing.Point(0, 10);
             this.groupBoxResizing.Name = "groupBoxResizing";
             this.groupBoxResizing.Padding = new System.Windows.Forms.Padding(20, 10, 10, 0);
-            this.groupBoxResizing.Size = new System.Drawing.Size(958, 108);
+            this.groupBoxResizing.Size = new System.Drawing.Size(764, 104);
             this.groupBoxResizing.TabIndex = 6;
             this.groupBoxResizing.TabStop = false;
             this.groupBoxResizing.Text = "Resizing";
@@ -120,7 +117,7 @@
             // 
             this.radioButtonPercent.AutoSize = true;
             this.radioButtonPercent.Enabled = false;
-            this.radioButtonPercent.Location = new System.Drawing.Point(322, 62);
+            this.radioButtonPercent.Location = new System.Drawing.Point(285, 57);
             this.radioButtonPercent.Name = "radioButtonPercent";
             this.radioButtonPercent.Size = new System.Drawing.Size(48, 24);
             this.radioButtonPercent.TabIndex = 7;
@@ -130,9 +127,10 @@
             // checkBoxResize
             // 
             this.checkBoxResize.AutoSize = true;
-            this.checkBoxResize.Location = new System.Drawing.Point(20, 30);
+            this.checkBoxResize.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBoxResize.Location = new System.Drawing.Point(20, 29);
             this.checkBoxResize.Name = "checkBoxResize";
-            this.checkBoxResize.Size = new System.Drawing.Size(139, 24);
+            this.checkBoxResize.Size = new System.Drawing.Size(734, 24);
             this.checkBoxResize.TabIndex = 7;
             this.checkBoxResize.Text = "Resize images";
             this.checkBoxResize.UseVisualStyleBackColor = true;
@@ -143,7 +141,7 @@
             this.radioButtonPixels.AutoSize = true;
             this.radioButtonPixels.Checked = true;
             this.radioButtonPixels.Enabled = false;
-            this.radioButtonPixels.Location = new System.Drawing.Point(272, 62);
+            this.radioButtonPixels.Location = new System.Drawing.Point(339, 57);
             this.radioButtonPixels.Name = "radioButtonPixels";
             this.radioButtonPixels.Size = new System.Drawing.Size(50, 24);
             this.radioButtonPixels.TabIndex = 6;
@@ -153,17 +151,18 @@
             // 
             // trackBarQuality
             // 
-            this.trackBarQuality.Location = new System.Drawing.Point(91, 604);
+            this.trackBarQuality.Location = new System.Drawing.Point(76, 56);
+            this.trackBarQuality.Margin = new System.Windows.Forms.Padding(0);
             this.trackBarQuality.Maximum = 11;
             this.trackBarQuality.Name = "trackBarQuality";
-            this.trackBarQuality.Size = new System.Drawing.Size(266, 69);
+            this.trackBarQuality.Size = new System.Drawing.Size(254, 69);
             this.trackBarQuality.TabIndex = 7;
             this.trackBarQuality.Value = 11;
             // 
             // labelQuality
             // 
             this.labelQuality.AutoSize = true;
-            this.labelQuality.Location = new System.Drawing.Point(29, 623);
+            this.labelQuality.Location = new System.Drawing.Point(16, 56);
             this.labelQuality.Name = "labelQuality";
             this.labelQuality.Size = new System.Drawing.Size(57, 20);
             this.labelQuality.TabIndex = 8;
@@ -174,22 +173,26 @@
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.AutoSize = true;
             this.buttonSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSave.Location = new System.Drawing.Point(915, 699);
+            this.buttonSave.Location = new System.Drawing.Point(633, 473);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(55, 30);
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // groupBoxOutput
             // 
+            this.groupBoxOutput.AutoSize = true;
+            this.groupBoxOutput.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxOutput.Controls.Add(this.labelOutputPath);
             this.groupBoxOutput.Controls.Add(this.buttonBrowse);
             this.groupBoxOutput.Controls.Add(this.checkBoxOverwrite);
-            this.groupBoxOutput.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxOutput.Location = new System.Drawing.Point(15, 123);
+            this.groupBoxOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxOutput.Location = new System.Drawing.Point(0, 0);
             this.groupBoxOutput.Name = "groupBoxOutput";
-            this.groupBoxOutput.Size = new System.Drawing.Size(958, 116);
+            this.groupBoxOutput.Padding = new System.Windows.Forms.Padding(20, 10, 10, 0);
+            this.groupBoxOutput.Size = new System.Drawing.Size(764, 111);
             this.groupBoxOutput.TabIndex = 10;
             this.groupBoxOutput.TabStop = false;
             this.groupBoxOutput.Text = "Output";
@@ -197,7 +200,8 @@
             // labelOutputPath
             // 
             this.labelOutputPath.AutoSize = true;
-            this.labelOutputPath.Location = new System.Drawing.Point(98, 73);
+            this.labelOutputPath.Enabled = false;
+            this.labelOutputPath.Location = new System.Drawing.Point(96, 64);
             this.labelOutputPath.Name = "labelOutputPath";
             this.labelOutputPath.Size = new System.Drawing.Size(74, 20);
             this.labelOutputPath.TabIndex = 3;
@@ -208,7 +212,7 @@
             this.buttonBrowse.AutoSize = true;
             this.buttonBrowse.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonBrowse.Enabled = false;
-            this.buttonBrowse.Location = new System.Drawing.Point(20, 68);
+            this.buttonBrowse.Location = new System.Drawing.Point(20, 59);
             this.buttonBrowse.Name = "buttonBrowse";
             this.buttonBrowse.Size = new System.Drawing.Size(72, 30);
             this.buttonBrowse.TabIndex = 2;
@@ -221,33 +225,85 @@
             this.checkBoxOverwrite.AutoSize = true;
             this.checkBoxOverwrite.Checked = true;
             this.checkBoxOverwrite.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxOverwrite.Location = new System.Drawing.Point(20, 38);
+            this.checkBoxOverwrite.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBoxOverwrite.Location = new System.Drawing.Point(20, 29);
             this.checkBoxOverwrite.Name = "checkBoxOverwrite";
-            this.checkBoxOverwrite.Size = new System.Drawing.Size(172, 24);
+            this.checkBoxOverwrite.Size = new System.Drawing.Size(734, 24);
             this.checkBoxOverwrite.TabIndex = 0;
             this.checkBoxOverwrite.Text = "Overwrite input files";
             this.checkBoxOverwrite.UseVisualStyleBackColor = true;
             this.checkBoxOverwrite.CheckedChanged += new System.EventHandler(this.checkBoxOverwrite_CheckedChanged);
             // 
-            // flowLayoutPanel1
+            // panelOutput
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(337, 353);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel1.TabIndex = 11;
+            this.panelOutput.AutoSize = true;
+            this.panelOutput.Controls.Add(this.groupBoxOutput);
+            this.panelOutput.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelOutput.Location = new System.Drawing.Point(15, 15);
+            this.panelOutput.Name = "panelOutput";
+            this.panelOutput.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.panelOutput.Size = new System.Drawing.Size(764, 121);
+            this.panelOutput.TabIndex = 14;
+            // 
+            // panelResizing
+            // 
+            this.panelResizing.AutoSize = true;
+            this.panelResizing.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelResizing.Controls.Add(this.groupBoxResizing);
+            this.panelResizing.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelResizing.Location = new System.Drawing.Point(15, 136);
+            this.panelResizing.Name = "panelResizing";
+            this.panelResizing.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
+            this.panelResizing.Size = new System.Drawing.Size(764, 124);
+            this.panelResizing.TabIndex = 15;
+            // 
+            // Cancel
+            // 
+            this.Cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Cancel.Location = new System.Drawing.Point(694, 473);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(75, 30);
+            this.Cancel.TabIndex = 16;
+            this.Cancel.Text = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxCompression
+            // 
+            this.groupBoxCompression.AutoSize = true;
+            this.groupBoxCompression.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBoxCompression.Controls.Add(this.checkBoxStrip);
+            this.groupBoxCompression.Controls.Add(this.trackBarQuality);
+            this.groupBoxCompression.Controls.Add(this.labelQuality);
+            this.groupBoxCompression.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxCompression.Location = new System.Drawing.Point(15, 260);
+            this.groupBoxCompression.Name = "groupBoxCompression";
+            this.groupBoxCompression.Padding = new System.Windows.Forms.Padding(20, 10, 10, 0);
+            this.groupBoxCompression.Size = new System.Drawing.Size(764, 144);
+            this.groupBoxCompression.TabIndex = 17;
+            this.groupBoxCompression.TabStop = false;
+            this.groupBoxCompression.Text = "Compression";
+            // 
+            // checkBoxStrip
+            // 
+            this.checkBoxStrip.AutoSize = true;
+            this.checkBoxStrip.Dock = System.Windows.Forms.DockStyle.Top;
+            this.checkBoxStrip.Location = new System.Drawing.Point(20, 29);
+            this.checkBoxStrip.Name = "checkBoxStrip";
+            this.checkBoxStrip.Size = new System.Drawing.Size(734, 24);
+            this.checkBoxStrip.TabIndex = 9;
+            this.checkBoxStrip.Text = "Strip JPEG metadata";
+            this.checkBoxStrip.UseVisualStyleBackColor = true;
             // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 747);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.groupBoxOutput);
+            this.ClientSize = new System.Drawing.Size(794, 521);
+            this.Controls.Add(this.groupBoxCompression);
+            this.Controls.Add(this.Cancel);
+            this.Controls.Add(this.panelResizing);
+            this.Controls.Add(this.panelOutput);
             this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.labelQuality);
-            this.Controls.Add(this.trackBarQuality);
-            this.Controls.Add(this.groupBoxResizing);
-            this.Controls.Add(this.checkBoxStripMeta);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSettings";
@@ -261,14 +317,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarQuality)).EndInit();
             this.groupBoxOutput.ResumeLayout(false);
             this.groupBoxOutput.PerformLayout();
+            this.panelOutput.ResumeLayout(false);
+            this.panelOutput.PerformLayout();
+            this.panelResizing.ResumeLayout(false);
+            this.panelResizing.PerformLayout();
+            this.groupBoxCompression.ResumeLayout(false);
+            this.groupBoxCompression.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox checkBoxStripMeta;
         private System.Windows.Forms.TextBox textBoxWidth;
         private System.Windows.Forms.TextBox textBoxHeight;
         private System.Windows.Forms.Label labelWidth;
@@ -284,6 +344,10 @@
         private System.Windows.Forms.Button buttonBrowse;
         private System.Windows.Forms.CheckBox checkBoxOverwrite;
         private System.Windows.Forms.Label labelOutputPath;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Panel panelOutput;
+        private System.Windows.Forms.Panel panelResizing;
+        private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.GroupBox groupBoxCompression;
+        private System.Windows.Forms.CheckBox checkBoxStrip;
     }
 }
