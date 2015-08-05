@@ -71,6 +71,12 @@ namespace AllShrink
             Properties.Settings.Default.overwriteFiles = checkBoxResize.Checked;
             Properties.Settings.Default.quality = trackBarQuality.Value;
             Properties.Settings.Default.Save();
+            this.Close();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
