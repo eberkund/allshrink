@@ -13,11 +13,18 @@ namespace AllShrink
 
         private void loadSettings()
         {
+            // Resize settings
             textBoxWidth.Text = Properties.Settings.Default.maxWidth.ToString();
             textBoxHeight.Text = Properties.Settings.Default.maxHeight.ToString();
             checkBoxResize.Checked = Properties.Settings.Default.resizeImages;
+
+            // Output settings
             checkBoxOverwrite.Checked = Properties.Settings.Default.overwriteFiles;
+            labelOutputPath.Text = Properties.Settings.Default.path;
+
+            // Compression settings
             trackBarQuality.Value = Properties.Settings.Default.quality;
+            checkBoxStrip.Checked = Properties.Settings.Default.strip;
         }
 
         private void checkBoxResize_CheckedChanged(object sender, EventArgs e)
@@ -58,18 +65,32 @@ namespace AllShrink
 
         private void buttonBrowse_Click(object sender, EventArgs e)
         {
+            // Get the path from the user
             FolderBrowserDialog open = new FolderBrowserDialog();
             DialogResult result = open.ShowDialog();
+            
+            // Update the label
             labelOutputPath.Text = open.SelectedPath;
+
+            // Update the property
+            Properties.Settings.Default.path = labelOutputPath.Text;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            // Resize settings
             Properties.Settings.Default.maxWidth = Int16.Parse(textBoxWidth.Text);
             Properties.Settings.Default.maxHeight = Int16.Parse(textBoxHeight.Text);
             Properties.Settings.Default.resizeImages = checkBoxResize.Checked;
+
+            // Output settings
             Properties.Settings.Default.overwriteFiles = checkBoxResize.Checked;
+            Properties.Settings.Default.path = labelOutputPath.Text;
+
+            // Compression settings
             Properties.Settings.Default.quality = trackBarQuality.Value;
+            Properties.Settings.Default.strip = checkBoxStrip.Checked;
+
             Properties.Settings.Default.Save();
             this.Close();
         }
