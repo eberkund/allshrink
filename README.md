@@ -1,5 +1,5 @@
 # AllShrink
-A quick and easy, batch image optimizer for Windows based on [Magick.NET][https://magick.codeplex.com/]
+A quick and easy, batch image optimizer for Windows based on [Magick.NET](https://magick.codeplex.com/)
 
 ## Features
 - Drag and drop file queueing
