@@ -41,10 +41,14 @@ namespace AllShrink
             MagickImage mi;
             FileInfo fi;
 
-
+            // Get settings
             int maxHeight = Properties.Settings.Default.maxHeight;
             int maxWidth = Properties.Settings.Default.maxWidth;
             int units = Properties.Settings.Default.units;
+            bool strip = Properties.Settings.Default.strip;
+            bool resize = Properties.Settings.Default.resizeImages;
+            bool overwrite = Properties.Settings.Default.overwriteFiles;
+            string path = Properties.Settings.Default.path;
 
             foreach (ListViewItem listedImage in listViewMain.Items)
             {
@@ -52,15 +56,42 @@ namespace AllShrink
                 fi = new FileInfo(listedImage.Text);
                 beforeLength = fi.Length;
 
-                // Resize and optimize the image
-                outputName = listedImage.Text.Insert(listedImage.Text.LastIndexOf('.'), "_resized");
                 mi = new MagickImage(listedImage.Text);
-                mi.Resize(200, 200);
+
+                if (overwrite)
+                {
+                    outputName = listedImage.Text;
+                }
+                else
+                {
+                    string[] split = listedImage.Text.Split('\\');
+                    outputName = path + split[split.Length];
+                }
+
+                Console.WriteLine(outputName);
+
+                if (strip)
+                {
+                    mi.Strip();
+                }
+
+                if (resize)
+                {
+                    if (units == 0)
+                    {
+                        mi.Resize(maxWidth, maxHeight);
+                    }
+                    else if (units == 1)
+                    {
+                        mi.Resize(new Percentage(maxWidth), new Percentage(maxHeight));
+                    }
+                }
+
                 mi.Interlace = Interlace.Jpeg;
-                mi.Strip();
                 mi.Write(outputName);
-                optimizer = new ImageOptimizer();
-                optimizer.LosslessCompress(outputName);
+
+                //optimizer = new ImageOptimizer();
+                //optimizer.LosslessCompress(outputName);
 
                 // Get the size of the file after shrinking;
                 fi = new FileInfo(outputName);
@@ -69,7 +100,8 @@ namespace AllShrink
                 // Calculate and display the savings
                 savings = (1 - (float)afterLength / beforeLength) * 100;
                 listedImage.SubItems[2].Text = savings.ToString("p1");
-                index = listViewMain.Columns["columnSavings"].Index;
+                //index = listViewMain.Columns["columnSavings"].Index;
+                index = 2;
                 listViewMain.Items[1].SubItems[index].Text = savings.ToString("p1");
             }
         }
