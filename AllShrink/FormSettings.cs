@@ -17,6 +17,16 @@ namespace AllShrink
             textBoxWidth.Text = Properties.Settings.Default.maxWidth.ToString();
             textBoxHeight.Text = Properties.Settings.Default.maxHeight.ToString();
             checkBoxResize.Checked = Properties.Settings.Default.resizeImages;
+            if (Properties.Settings.Default.units == 0)
+            {
+                radioButtonPixels.Checked = true;
+                radioButtonPercent.Checked = false;
+            }
+            else if (Properties.Settings.Default.units == 1)
+            {
+                radioButtonPixels.Checked = false;
+                radioButtonPercent.Checked = true;
+            }
 
             // Output settings
             checkBoxOverwrite.Checked = Properties.Settings.Default.overwriteFiles;
@@ -71,9 +81,6 @@ namespace AllShrink
             
             // Update the label
             labelOutputPath.Text = open.SelectedPath;
-
-            // Update the property
-            Properties.Settings.Default.path = labelOutputPath.Text;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -82,6 +89,14 @@ namespace AllShrink
             Properties.Settings.Default.maxWidth = Int16.Parse(textBoxWidth.Text);
             Properties.Settings.Default.maxHeight = Int16.Parse(textBoxHeight.Text);
             Properties.Settings.Default.resizeImages = checkBoxResize.Checked;
+            if (radioButtonPixels.Checked)
+            {
+                Properties.Settings.Default.units = 0;
+            }
+            else if (radioButtonPixels.Checked)
+            {
+                Properties.Settings.Default.units = 1;
+            }
 
             // Output settings
             Properties.Settings.Default.overwriteFiles = checkBoxResize.Checked;

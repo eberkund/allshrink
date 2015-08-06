@@ -108,7 +108,7 @@
             this.groupBoxResizing.Location = new System.Drawing.Point(0, 10);
             this.groupBoxResizing.Name = "groupBoxResizing";
             this.groupBoxResizing.Padding = new System.Windows.Forms.Padding(20, 10, 10, 0);
-            this.groupBoxResizing.Size = new System.Drawing.Size(764, 104);
+            this.groupBoxResizing.Size = new System.Drawing.Size(594, 104);
             this.groupBoxResizing.TabIndex = 6;
             this.groupBoxResizing.TabStop = false;
             this.groupBoxResizing.Text = "Resizing";
@@ -130,7 +130,7 @@
             this.checkBoxResize.Dock = System.Windows.Forms.DockStyle.Top;
             this.checkBoxResize.Location = new System.Drawing.Point(20, 29);
             this.checkBoxResize.Name = "checkBoxResize";
-            this.checkBoxResize.Size = new System.Drawing.Size(734, 24);
+            this.checkBoxResize.Size = new System.Drawing.Size(564, 24);
             this.checkBoxResize.TabIndex = 7;
             this.checkBoxResize.Text = "Resize images";
             this.checkBoxResize.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.AutoSize = true;
             this.buttonSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSave.Location = new System.Drawing.Point(643, 410);
+            this.buttonSave.Location = new System.Drawing.Point(480, 410);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(55, 30);
             this.buttonSave.TabIndex = 9;
@@ -192,7 +192,7 @@
             this.groupBoxOutput.Location = new System.Drawing.Point(0, 0);
             this.groupBoxOutput.Name = "groupBoxOutput";
             this.groupBoxOutput.Padding = new System.Windows.Forms.Padding(20, 10, 10, 0);
-            this.groupBoxOutput.Size = new System.Drawing.Size(764, 111);
+            this.groupBoxOutput.Size = new System.Drawing.Size(594, 111);
             this.groupBoxOutput.TabIndex = 10;
             this.groupBoxOutput.TabStop = false;
             this.groupBoxOutput.Text = "Output";
@@ -228,7 +228,7 @@
             this.checkBoxOverwrite.Dock = System.Windows.Forms.DockStyle.Top;
             this.checkBoxOverwrite.Location = new System.Drawing.Point(20, 29);
             this.checkBoxOverwrite.Name = "checkBoxOverwrite";
-            this.checkBoxOverwrite.Size = new System.Drawing.Size(734, 24);
+            this.checkBoxOverwrite.Size = new System.Drawing.Size(564, 24);
             this.checkBoxOverwrite.TabIndex = 0;
             this.checkBoxOverwrite.Text = "Overwrite input files";
             this.checkBoxOverwrite.UseVisualStyleBackColor = true;
@@ -242,7 +242,7 @@
             this.panelOutput.Location = new System.Drawing.Point(15, 15);
             this.panelOutput.Name = "panelOutput";
             this.panelOutput.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.panelOutput.Size = new System.Drawing.Size(764, 121);
+            this.panelOutput.Size = new System.Drawing.Size(594, 121);
             this.panelOutput.TabIndex = 14;
             // 
             // panelResizing
@@ -254,16 +254,18 @@
             this.panelResizing.Location = new System.Drawing.Point(15, 136);
             this.panelResizing.Name = "panelResizing";
             this.panelResizing.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.panelResizing.Size = new System.Drawing.Size(764, 124);
+            this.panelResizing.Size = new System.Drawing.Size(594, 124);
             this.panelResizing.TabIndex = 15;
             // 
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCancel.AutoSize = true;
+            this.buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(704, 410);
+            this.buttonCancel.Location = new System.Drawing.Point(541, 410);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 30);
+            this.buttonCancel.Size = new System.Drawing.Size(68, 30);
             this.buttonCancel.TabIndex = 16;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -280,7 +282,7 @@
             this.groupBoxCompression.Location = new System.Drawing.Point(15, 260);
             this.groupBoxCompression.Name = "groupBoxCompression";
             this.groupBoxCompression.Padding = new System.Windows.Forms.Padding(20, 10, 10, 0);
-            this.groupBoxCompression.Size = new System.Drawing.Size(764, 144);
+            this.groupBoxCompression.Size = new System.Drawing.Size(594, 144);
             this.groupBoxCompression.TabIndex = 17;
             this.groupBoxCompression.TabStop = false;
             this.groupBoxCompression.Text = "Compression";
@@ -291,7 +293,7 @@
             this.checkBoxStrip.Dock = System.Windows.Forms.DockStyle.Top;
             this.checkBoxStrip.Location = new System.Drawing.Point(20, 29);
             this.checkBoxStrip.Name = "checkBoxStrip";
-            this.checkBoxStrip.Size = new System.Drawing.Size(734, 24);
+            this.checkBoxStrip.Size = new System.Drawing.Size(564, 24);
             this.checkBoxStrip.TabIndex = 9;
             this.checkBoxStrip.Text = "Strip JPEG metadata";
             this.checkBoxStrip.UseVisualStyleBackColor = true;
@@ -304,7 +306,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(794, 567);
+            this.ClientSize = new System.Drawing.Size(624, 489);
             this.Controls.Add(this.groupBoxCompression);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.panelResizing);

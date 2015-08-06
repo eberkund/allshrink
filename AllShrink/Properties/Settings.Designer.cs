@@ -106,5 +106,17 @@ namespace AllShrink.Properties {
                 this["strip"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int units {
+            get {
+                return ((int)(this["units"]));
+            }
+            set {
+                this["units"] = value;
+            }
+        }
     }
 }

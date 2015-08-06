@@ -41,6 +41,11 @@ namespace AllShrink
             MagickImage mi;
             FileInfo fi;
 
+
+            int maxHeight = Properties.Settings.Default.maxHeight;
+            int maxWidth = Properties.Settings.Default.maxWidth;
+            int units = Properties.Settings.Default.units;
+
             foreach (ListViewItem listedImage in listViewMain.Items)
             {
                 // Get the size of the file before shrinking
