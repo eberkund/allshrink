@@ -83,6 +83,7 @@ namespace AllShrink
                 }
                 catch (Exception ex)
                 {
+                    // Invalid output path, display error and exit
                     MessageBox.Show(ex.ToString(), "Error");
                     break;
                 }

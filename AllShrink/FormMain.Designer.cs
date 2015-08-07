@@ -149,8 +149,7 @@
             this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonClear.AutoSize = true;
             this.buttonClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonClear.Location = new System.Drawing.Point(14, 14);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(5, 5, 5, 500);
+            this.buttonClear.Location = new System.Drawing.Point(11, 19);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(56, 30);
             this.buttonClear.TabIndex = 2;
@@ -163,8 +162,7 @@
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAdd.AutoSize = true;
             this.buttonAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdd.Location = new System.Drawing.Point(80, 14);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonAdd.Location = new System.Drawing.Point(73, 19);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(48, 30);
             this.buttonAdd.TabIndex = 3;
@@ -177,8 +175,7 @@
             this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRun.AutoSize = true;
             this.buttonRun.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRun.Location = new System.Drawing.Point(1137, 14);
-            this.buttonRun.Margin = new System.Windows.Forms.Padding(5);
+            this.buttonRun.Location = new System.Drawing.Point(1142, 19);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(49, 30);
             this.buttonRun.TabIndex = 4;
@@ -190,7 +187,7 @@
             // 
             this.labelDragImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelDragImages.AutoSize = true;
-            this.labelDragImages.Location = new System.Drawing.Point(136, 19);
+            this.labelDragImages.Location = new System.Drawing.Point(127, 24);
             this.labelDragImages.Name = "labelDragImages";
             this.labelDragImages.Size = new System.Drawing.Size(239, 20);
             this.labelDragImages.TabIndex = 5;
@@ -200,7 +197,6 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.buttonRun);
             this.panel1.Controls.Add(this.labelDragImages);
             this.panel1.Controls.Add(this.buttonClear);

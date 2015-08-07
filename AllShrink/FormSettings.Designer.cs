@@ -169,12 +169,13 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.AutoSize = true;
             this.buttonSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSave.Location = new System.Drawing.Point(554, 410);
+            this.buttonSave.Location = new System.Drawing.Point(542, 499);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(55, 30);
+            this.buttonSave.Padding = new System.Windows.Forms.Padding(6, 3, 6, 3);
+            this.buttonSave.Size = new System.Drawing.Size(67, 36);
             this.buttonSave.TabIndex = 9;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -290,7 +291,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(624, 489);
+            this.ClientSize = new System.Drawing.Size(624, 553);
             this.Controls.Add(this.groupBoxCompression);
             this.Controls.Add(this.panelResizing);
             this.Controls.Add(this.panelOutput);
