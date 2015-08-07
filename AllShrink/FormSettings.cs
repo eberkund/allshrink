@@ -8,11 +8,7 @@ namespace AllShrink
         public FormSettings()
         {
             InitializeComponent();
-            loadSettings();
-        }
 
-        private void loadSettings()
-        {
             // Resize settings
             textBoxWidth.Text = Properties.Settings.Default.maxWidth.ToString();
             textBoxHeight.Text = Properties.Settings.Default.maxHeight.ToString();
