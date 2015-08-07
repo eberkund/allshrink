@@ -55,16 +55,12 @@ namespace AllShrink
                 mi = new MagickImage(listedImage.Text);
                 beforeLength = fi.Length;
 
-                // Output location
+                // Generate the new image
                 outputName = overwrite ? listedImage.Text : (path + "\\" + fi.Name);
-
-                // Strip metadata
                 if (strip)
                 {
                     mi.Strip();
                 }
-
-                // Resize settings
                 if (resize)
                 {
                     if (units == 0)
