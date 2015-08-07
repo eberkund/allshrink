@@ -52,16 +52,16 @@
             // 
             // menuStripMain
             // 
-            this.menuStripMain.GripMargin = new System.Windows.Forms.Padding(2);
+            this.menuStripMain.GripMargin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.menuStripMain.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem});
+            this.menuStripMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Size = new System.Drawing.Size(1202, 33);
             this.menuStripMain.TabIndex = 0;
-            this.menuStripMain.Text = "menuStripMain";
             // 
             // fileToolStripMenuItem
             // 
@@ -105,14 +105,13 @@
             // listViewMain
             // 
             this.listViewMain.AllowDrop = true;
-            this.listViewMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewMain.BackgroundImageTiled = true;
             this.listViewMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listViewMain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnFilename,
             this.columnSize,
             this.columnSavings});
+            this.listViewMain.Dock = System.Windows.Forms.DockStyle.Top;
             this.listViewMain.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewMain.Location = new System.Drawing.Point(0, 33);
             this.listViewMain.Margin = new System.Windows.Forms.Padding(0);
@@ -150,7 +149,7 @@
             this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonClear.AutoSize = true;
             this.buttonClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonClear.Location = new System.Drawing.Point(14, 16);
+            this.buttonClear.Location = new System.Drawing.Point(14, 14);
             this.buttonClear.Margin = new System.Windows.Forms.Padding(5, 5, 5, 500);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(56, 30);
@@ -164,7 +163,7 @@
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAdd.AutoSize = true;
             this.buttonAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonAdd.Location = new System.Drawing.Point(80, 16);
+            this.buttonAdd.Location = new System.Drawing.Point(80, 14);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(5);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(48, 30);
@@ -178,7 +177,7 @@
             this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRun.AutoSize = true;
             this.buttonRun.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonRun.Location = new System.Drawing.Point(1139, 16);
+            this.buttonRun.Location = new System.Drawing.Point(1137, 14);
             this.buttonRun.Margin = new System.Windows.Forms.Padding(5);
             this.buttonRun.Name = "buttonRun";
             this.buttonRun.Size = new System.Drawing.Size(49, 30);
@@ -191,7 +190,7 @@
             // 
             this.labelDragImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelDragImages.AutoSize = true;
-            this.labelDragImages.Location = new System.Drawing.Point(136, 21);
+            this.labelDragImages.Location = new System.Drawing.Point(136, 19);
             this.labelDragImages.Name = "labelDragImages";
             this.labelDragImages.Size = new System.Drawing.Size(239, 20);
             this.labelDragImages.TabIndex = 5;
@@ -199,14 +198,14 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.buttonRun);
             this.panel1.Controls.Add(this.labelDragImages);
             this.panel1.Controls.Add(this.buttonClear);
             this.panel1.Controls.Add(this.buttonAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 613);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";

@@ -80,26 +80,24 @@ namespace AllShrink
                 try {
                     // Save the new file
                     mi.Write(outputName);
-
-                    // Lossless optimization
-                    optimizer = new ImageOptimizer();
-                    optimizer.LosslessCompress(outputName);
-
-                    // Get the size of the file after shrinking;
-                    fi = new FileInfo(outputName);
-                    afterLength = fi.Length;
-
-                    // Calculate and display the savings
-                    savings = (1 - (float)afterLength / beforeLength) * 100;
-                    listedImage.SubItems[columnSavings.Index].Text = savings.ToString("p1");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(
-                        "There was a problem writing to the specified output path.",
-                        "Error"
-                    );
+                    MessageBox.Show(ex.ToString(), "Error");
+                    break;
                 }
+
+                // Lossless optimization
+                optimizer = new ImageOptimizer();
+                optimizer.LosslessCompress(outputName);
+
+                // Get the size of the file after shrinking;
+                fi = new FileInfo(outputName);
+                afterLength = fi.Length;
+
+                // Calculate and display the savings
+                savings = (1 - (float)afterLength / beforeLength) * 100;
+                listedImage.SubItems[columnSavings.Index].Text = savings.ToString("p1");
             }
         }
 
