@@ -45,7 +45,6 @@
             this.checkBoxOverwrite = new System.Windows.Forms.CheckBox();
             this.panelOutput = new System.Windows.Forms.Panel();
             this.panelResizing = new System.Windows.Forms.Panel();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.groupBoxCompression = new System.Windows.Forms.GroupBox();
             this.checkBoxStrip = new System.Windows.Forms.CheckBox();
             this.groupBoxResizing.SuspendLayout();
@@ -173,7 +172,7 @@
             this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.AutoSize = true;
             this.buttonSave.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonSave.Location = new System.Drawing.Point(480, 410);
+            this.buttonSave.Location = new System.Drawing.Point(554, 410);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(55, 30);
             this.buttonSave.TabIndex = 9;
@@ -257,20 +256,6 @@
             this.panelResizing.Size = new System.Drawing.Size(594, 124);
             this.panelResizing.TabIndex = 15;
             // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.AutoSize = true;
-            this.buttonCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.Location = new System.Drawing.Point(541, 410);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(68, 30);
-            this.buttonCancel.TabIndex = 16;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
             // groupBoxCompression
             // 
             this.groupBoxCompression.AutoSize = true;
@@ -305,10 +290,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(624, 489);
             this.Controls.Add(this.groupBoxCompression);
-            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.panelResizing);
             this.Controls.Add(this.panelOutput);
             this.Controls.Add(this.buttonSave);
@@ -354,7 +337,6 @@
         private System.Windows.Forms.Label labelOutputPath;
         private System.Windows.Forms.Panel panelOutput;
         private System.Windows.Forms.Panel panelResizing;
-        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.GroupBox groupBoxCompression;
         private System.Windows.Forms.CheckBox checkBoxStrip;
     }

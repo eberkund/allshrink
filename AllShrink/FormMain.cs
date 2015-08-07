@@ -10,6 +10,7 @@ namespace AllShrink
         public FormMain()
         {
             InitializeComponent();
+            Properties.Settings.Default.Reset();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -48,6 +49,7 @@ namespace AllShrink
             bool resize = Properties.Settings.Default.resize;
             bool overwrite = Properties.Settings.Default.overwrite;
             string path = Properties.Settings.Default.path;
+            int quality = Properties.Settings.Default.quality;
 
             foreach (ListViewItem listedImage in listViewMain.Items)
             {
@@ -72,22 +74,32 @@ namespace AllShrink
                         mi.Resize(new Percentage(maxWidth), new Percentage(maxHeight));
                     }
                 }
-
-                // Save the new file
+                mi.Quality = quality * (100 / 13);
                 mi.Interlace = Interlace.Jpeg;
-                mi.Write(outputName);
+                
+                try {
+                    // Save the new file
+                    mi.Write(outputName);
 
-                // Lossless optimization
-                optimizer = new ImageOptimizer();
-                optimizer.LosslessCompress(outputName);
+                    // Lossless optimization
+                    optimizer = new ImageOptimizer();
+                    optimizer.LosslessCompress(outputName);
 
-                // Get the size of the file after shrinking;
-                fi = new FileInfo(outputName);
-                afterLength = fi.Length;
+                    // Get the size of the file after shrinking;
+                    fi = new FileInfo(outputName);
+                    afterLength = fi.Length;
 
-                // Calculate and display the savings
-                savings = (1 - (float)afterLength / beforeLength) * 100;
-                listedImage.SubItems[columnSavings.Index].Text = savings.ToString("p1");
+                    // Calculate and display the savings
+                    savings = (1 - (float)afterLength / beforeLength) * 100;
+                    listedImage.SubItems[columnSavings.Index].Text = savings.ToString("p1");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        "There was a problem writing to the specified output path.",
+                        "Error"
+                    );
+                }
             }
         }
 
