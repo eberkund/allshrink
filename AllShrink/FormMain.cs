@@ -32,7 +32,6 @@ namespace AllShrink
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            int index;
             long beforeLength;
             long afterLength;
             float savings;
@@ -52,26 +51,20 @@ namespace AllShrink
 
             foreach (ListViewItem listedImage in listViewMain.Items)
             {
-                // Get the size of the file before shrinking
                 fi = new FileInfo(listedImage.Text);
+                mi = new MagickImage(listedImage.Text);
                 beforeLength = fi.Length;
 
-                mi = new MagickImage(listedImage.Text);
+                // Output location
+                outputName = overwrite ? listedImage.Text : (path + "\\" + fi.Name);
 
-                if (overwrite)
-                {
-                    outputName = listedImage.Text;
-                }
-                else
-                {
-                    outputName = path + "\\" + fi.Name;
-                }
-
+                // Strip metadata
                 if (strip)
                 {
                     mi.Strip();
                 }
 
+                // Resize settings
                 if (resize)
                 {
                     if (units == 0)
@@ -84,11 +77,13 @@ namespace AllShrink
                     }
                 }
 
+                // Save the new file
                 mi.Interlace = Interlace.Jpeg;
                 mi.Write(outputName);
 
-                //optimizer = new ImageOptimizer();
-                //optimizer.LosslessCompress(outputName);
+                // Lossless optimization
+                optimizer = new ImageOptimizer();
+                optimizer.LosslessCompress(outputName);
 
                 // Get the size of the file after shrinking;
                 fi = new FileInfo(outputName);
@@ -96,10 +91,7 @@ namespace AllShrink
 
                 // Calculate and display the savings
                 savings = (1 - (float)afterLength / beforeLength) * 100;
-                listedImage.SubItems[2].Text = savings.ToString("p1");
-                //index = listViewMain.Columns["columnSavings"].Index;
-                index = 2;
-                listViewMain.Items[1].SubItems[index].Text = savings.ToString("p1");
+                listedImage.SubItems[columnSavings.Index].Text = savings.ToString("p1");
             }
         }
 
