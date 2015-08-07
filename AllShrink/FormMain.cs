@@ -46,8 +46,8 @@ namespace AllShrink
             int maxWidth = Properties.Settings.Default.maxWidth;
             int units = Properties.Settings.Default.units;
             bool strip = Properties.Settings.Default.strip;
-            bool resize = Properties.Settings.Default.resizeImages;
-            bool overwrite = Properties.Settings.Default.overwriteFiles;
+            bool resize = Properties.Settings.Default.resize;
+            bool overwrite = Properties.Settings.Default.overwrite;
             string path = Properties.Settings.Default.path;
 
             foreach (ListViewItem listedImage in listViewMain.Items)
@@ -64,11 +64,8 @@ namespace AllShrink
                 }
                 else
                 {
-                    string[] split = listedImage.Text.Split('\\');
-                    outputName = path + split[split.Length];
+                    outputName = path + "\\" + fi.Name;
                 }
-
-                Console.WriteLine(outputName);
 
                 if (strip)
                 {

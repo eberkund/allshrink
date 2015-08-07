@@ -50,24 +50,24 @@ namespace AllShrink.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool overwriteFiles {
+        public bool overwrite {
             get {
-                return ((bool)(this["overwriteFiles"]));
+                return ((bool)(this["overwrite"]));
             }
             set {
-                this["overwriteFiles"] = value;
+                this["overwrite"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool resizeImages {
+        public bool resize {
             get {
-                return ((bool)(this["resizeImages"]));
+                return ((bool)(this["resize"]));
             }
             set {
-                this["resizeImages"] = value;
+                this["resize"] = value;
             }
         }
         

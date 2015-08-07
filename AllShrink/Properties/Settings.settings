@@ -8,10 +8,10 @@
     <Setting Name="maxHeight" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1000</Value>
     </Setting>
-    <Setting Name="overwriteFiles" Type="System.Boolean" Scope="User">
+    <Setting Name="overwrite" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="resizeImages" Type="System.Boolean" Scope="User">
+    <Setting Name="resize" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="quality" Type="System.Int32" Scope="User">
