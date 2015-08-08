@@ -455,6 +455,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_720C98184DA5497BA17C881C98130458"
+            {
+            "Name" = "8:AllShrink"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_ED11DE93C45A41EDA7708D45FA3D6421"
+            "Folder" = "8:_5F6B2162AFE84F8D9621243CBB049212"
+            "WorkingFolder" = "8:_915D6B9D98ED4CD6B3C7051E5BB5AEF7"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9F389C855FC543849E1045975F2603F4"
+            {
+            "Name" = "8:AllShrink"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_ED11DE93C45A41EDA7708D45FA3D6421"
+            "Folder" = "8:_ED29B7DF2EFB49789D61958458543CE1"
+            "WorkingFolder" = "8:_915D6B9D98ED4CD6B3C7051E5BB5AEF7"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
