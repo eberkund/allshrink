@@ -32,9 +32,9 @@
 			this.labelAuthor = new System.Windows.Forms.Label();
 			this.panelLinks = new System.Windows.Forms.Panel();
 			this.linkLabelGitHub = new System.Windows.Forms.LinkLabel();
+			this.labelSeparator1 = new System.Windows.Forms.Label();
 			this.linkLabelWebsite = new System.Windows.Forms.LinkLabel();
 			this.buttonOk = new System.Windows.Forms.Button();
-			this.labelSeparator1 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel.SuspendLayout();
 			this.panelLinks.SuspendLayout();
 			this.SuspendLayout();
@@ -108,6 +108,19 @@
 			this.linkLabelGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.linkLabelGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGitHub_LinkClicked);
 			// 
+			// labelSeparator1
+			// 
+			this.labelSeparator1.AutoSize = true;
+			this.labelSeparator1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.labelSeparator1.Location = new System.Drawing.Point(60, 0);
+			this.labelSeparator1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.labelSeparator1.MinimumSize = new System.Drawing.Size(0, 40);
+			this.labelSeparator1.Name = "labelSeparator1";
+			this.labelSeparator1.Size = new System.Drawing.Size(14, 40);
+			this.labelSeparator1.TabIndex = 3;
+			this.labelSeparator1.Text = "|";
+			this.labelSeparator1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// linkLabelWebsite
 			// 
 			this.linkLabelWebsite.AutoSize = true;
@@ -137,19 +150,6 @@
 			this.buttonOk.UseVisualStyleBackColor = true;
 			this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
 			// 
-			// labelSeparator1
-			// 
-			this.labelSeparator1.AutoSize = true;
-			this.labelSeparator1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.labelSeparator1.Location = new System.Drawing.Point(60, 0);
-			this.labelSeparator1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.labelSeparator1.MinimumSize = new System.Drawing.Size(0, 40);
-			this.labelSeparator1.Name = "labelSeparator1";
-			this.labelSeparator1.Size = new System.Drawing.Size(14, 40);
-			this.labelSeparator1.TabIndex = 3;
-			this.labelSeparator1.Text = "|";
-			this.labelSeparator1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
 			// FormAbout
 			// 
 			this.AcceptButton = this.buttonOk;
@@ -162,11 +162,11 @@
 			this.Controls.Add(this.tableLayoutPanel);
 			this.Font = new System.Drawing.Font("Tahoma", 11F);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "FormAbout";
-			this.Padding = new System.Windows.Forms.Padding(12, 12, 12, 12);
+			this.Padding = new System.Windows.Forms.Padding(12);
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

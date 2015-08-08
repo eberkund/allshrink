@@ -115,12 +115,12 @@
 			// columnSize
 			// 
 			this.columnSize.Text = "Size";
-			this.columnSize.Width = 100;
+			this.columnSize.Width = 80;
 			// 
 			// columnSavings
 			// 
 			this.columnSavings.Text = "Savings";
-			this.columnSavings.Width = 100;
+			this.columnSavings.Width = 80;
 			// 
 			// buttonAdd
 			// 

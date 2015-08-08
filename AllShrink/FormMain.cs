@@ -26,73 +26,72 @@ namespace AllShrink
             listViewMain.Items.Clear();
         }
 
+		private void processImage(string input, string output)
+		{
+			MagickImage	mi = new MagickImage(input);
+
+			if (Properties.Settings.Default.strip)
+			{
+				mi.Strip();
+			}
+
+			if (Properties.Settings.Default.resize)
+			{
+				if (Properties.Settings.Default.units == 0)
+				{
+					mi.Resize(
+						Properties.Settings.Default.maxWidth,
+						Properties.Settings.Default.maxHeight
+					);
+				}
+				else if (Properties.Settings.Default.units == 1)
+				{
+					mi.Resize(
+						new Percentage(Properties.Settings.Default.maxWidth),
+						new Percentage(Properties.Settings.Default.maxHeight)
+					);
+				}
+			}
+
+			mi.Quality = Properties.Settings.Default.quality * (100 / 13);
+			mi.Interlace = Interlace.Jpeg;
+
+			try
+			{
+				mi.Write(output);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString(), "Error");
+			}
+		}
+
         private void buttonRun_Click(object sender, EventArgs e)
         {
             long beforeLength;
             long afterLength;
             float savings;
             string outputName;
-            ImageOptimizer optimizer;
-            MagickImage mi;
-            FileInfo fi;
+            FileInfo before;
+			FileInfo after;
 
-            // Get settings
-            int maxHeight = Properties.Settings.Default.maxHeight;
-            int maxWidth = Properties.Settings.Default.maxWidth;
-            int units = Properties.Settings.Default.units;
-            bool strip = Properties.Settings.Default.strip;
-            bool resize = Properties.Settings.Default.resize;
-            bool overwrite = Properties.Settings.Default.overwrite;
-            string path = Properties.Settings.Default.path;
-            int quality = Properties.Settings.Default.quality;
+			string path = Properties.Settings.Default.path;
+			bool overwrite = Properties.Settings.Default.overwrite;
 
-            foreach (ListViewItem listedImage in listViewMain.Items)
+			foreach (ListViewItem listedImage in listViewMain.Items)
             {
-                fi = new FileInfo(listedImage.Text);
-                mi = new MagickImage(listedImage.Text);
-                beforeLength = fi.Length;
-
+				// File size before shrinking
+                before = new FileInfo(listedImage.Text);
+                
                 // Generate the new image
                 outputName = overwrite ? listedImage.Text : (path + "\\" + fi.Name);
-                if (strip)
-                {
-                    mi.Strip();
-                }
-                if (resize)
-                {
-                    if (units == 0)
-                    {
-                        mi.Resize(maxWidth, maxHeight);
-                    }
-                    else if (units == 1)
-                    {
-                        mi.Resize(new Percentage(maxWidth), new Percentage(maxHeight));
-                    }
-                }
-                mi.Quality = quality * (100 / 13);
-                mi.Interlace = Interlace.Jpeg;
-                
-                try {
-                    // Save the new file
-                    mi.Write(outputName);
-                }
-                catch (Exception ex)
-                {
-                    // Invalid output path, display error and exit
-                    MessageBox.Show(ex.ToString(), "Error");
-                    break;
-                }
+				processImage(listedImage.Text, outputName);
 
-                // Lossless optimization
-                optimizer = new ImageOptimizer();
-                optimizer.LosslessCompress(outputName);
-
-                // Get the size of the file after shrinking;
-                fi = new FileInfo(outputName);
-                afterLength = fi.Length;
+                // File size after shrinking;
+                after = new FileInfo(outputName);
 
                 // Calculate and display the savings
-                savings = (1 - (float)afterLength / beforeLength) * 100;
+                savings = (1 - (float)before.Length / after.Length) * 100;
                 listedImage.SubItems[columnSavings.Index].Text = savings.ToString("p1");
             }
         }
