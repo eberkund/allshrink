@@ -26,11 +26,6 @@ namespace AllShrink
             listViewMain.Items.Clear();
         }
 
-        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void buttonRun_Click(object sender, EventArgs e)
         {
             long beforeLength;
@@ -144,14 +139,19 @@ namespace AllShrink
             addCurrentDirectoryFiles(paths);
         }
 
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuItemAbout_Click(object sender, EventArgs e)
         {
             new FormAbout().Show(); 
         }
 
-        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new FormSettings().Show();
-        }
-    }
+		private void menuItemSettings_Click(object sender, EventArgs e)
+		{
+			new FormSettings().Show();
+		}
+
+		private void menuItemExit_Click(object sender, EventArgs e)
+		{
+			Application.Exit();
+		}
+	}
 }
