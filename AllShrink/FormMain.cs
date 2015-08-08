@@ -68,15 +68,12 @@ namespace AllShrink
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            long beforeLength;
-            long afterLength;
             float savings;
             string outputName;
-            FileInfo before;
-			FileInfo after;
-
 			string path = Properties.Settings.Default.path;
 			bool overwrite = Properties.Settings.Default.overwrite;
+			FileInfo before;
+			FileInfo after;
 
 			foreach (ListViewItem listedImage in listViewMain.Items)
             {
@@ -84,7 +81,7 @@ namespace AllShrink
                 before = new FileInfo(listedImage.Text);
                 
                 // Generate the new image
-                outputName = overwrite ? listedImage.Text : (path + "\\" + fi.Name);
+                outputName = overwrite ? listedImage.Text : (path + "\\" + before.Name);
 				processImage(listedImage.Text, outputName);
 
                 // File size after shrinking;

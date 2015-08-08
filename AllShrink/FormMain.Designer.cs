@@ -100,7 +100,7 @@
 			this.listViewMain.Location = new System.Drawing.Point(0, 0);
 			this.listViewMain.Margin = new System.Windows.Forms.Padding(0);
 			this.listViewMain.Name = "listViewMain";
-			this.listViewMain.Size = new System.Drawing.Size(384, 198);
+			this.listViewMain.Size = new System.Drawing.Size(384, 219);
 			this.listViewMain.TabIndex = 1;
 			this.listViewMain.UseCompatibleStateImageBehavior = false;
 			this.listViewMain.View = System.Windows.Forms.View.Details;
@@ -175,7 +175,7 @@
 			this.panelControls.Controls.Add(this.buttonRun);
 			this.panelControls.Controls.Add(this.labelDragImages);
 			this.panelControls.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panelControls.Location = new System.Drawing.Point(0, 198);
+			this.panelControls.Location = new System.Drawing.Point(0, 219);
 			this.panelControls.Name = "panelControls";
 			this.panelControls.Size = new System.Drawing.Size(384, 43);
 			this.panelControls.TabIndex = 6;
@@ -183,7 +183,7 @@
 			// FormMain
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-			this.ClientSize = new System.Drawing.Size(384, 241);
+			this.ClientSize = new System.Drawing.Size(384, 262);
 			this.Controls.Add(this.listViewMain);
 			this.Controls.Add(this.panelControls);
 			this.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
