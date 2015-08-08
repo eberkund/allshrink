@@ -31,9 +31,9 @@
 			this.components = new System.ComponentModel.Container();
 			this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
 			this.menuItemFile = new System.Windows.Forms.MenuItem();
-			this.menuItemHelp = new System.Windows.Forms.MenuItem();
 			this.menuItemSettings = new System.Windows.Forms.MenuItem();
 			this.menuItemExit = new System.Windows.Forms.MenuItem();
+			this.menuItemHelp = new System.Windows.Forms.MenuItem();
 			this.menuItemAbout = new System.Windows.Forms.MenuItem();
 			this.listViewMain = new System.Windows.Forms.ListView();
 			this.columnFilename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -61,13 +61,6 @@
             this.menuItemExit});
 			this.menuItemFile.Text = "File";
 			// 
-			// menuItemHelp
-			// 
-			this.menuItemHelp.Index = 1;
-			this.menuItemHelp.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this.menuItemAbout});
-			this.menuItemHelp.Text = "Help";
-			// 
 			// menuItemSettings
 			// 
 			this.menuItemSettings.Index = 0;
@@ -79,6 +72,13 @@
 			this.menuItemExit.Index = 1;
 			this.menuItemExit.Text = "Exit";
 			this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
+			// 
+			// menuItemHelp
+			// 
+			this.menuItemHelp.Index = 1;
+			this.menuItemHelp.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemAbout});
+			this.menuItemHelp.Text = "Help";
 			// 
 			// menuItemAbout
 			// 
@@ -100,7 +100,7 @@
 			this.listViewMain.Location = new System.Drawing.Point(0, 0);
 			this.listViewMain.Margin = new System.Windows.Forms.Padding(0);
 			this.listViewMain.Name = "listViewMain";
-			this.listViewMain.Size = new System.Drawing.Size(1332, 652);
+			this.listViewMain.Size = new System.Drawing.Size(384, 198);
 			this.listViewMain.TabIndex = 1;
 			this.listViewMain.UseCompatibleStateImageBehavior = false;
 			this.listViewMain.View = System.Windows.Forms.View.Details;
@@ -110,26 +110,25 @@
 			// columnFilename
 			// 
 			this.columnFilename.Text = "Filename";
-			this.columnFilename.Width = 323;
+			this.columnFilename.Width = 200;
 			// 
 			// columnSize
 			// 
 			this.columnSize.Text = "Size";
-			this.columnSize.Width = 134;
+			this.columnSize.Width = 100;
 			// 
 			// columnSavings
 			// 
 			this.columnSavings.Text = "Savings";
-			this.columnSavings.Width = 116;
+			this.columnSavings.Width = 100;
 			// 
 			// buttonAdd
 			// 
-			this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.buttonAdd.AutoSize = true;
 			this.buttonAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.buttonAdd.Location = new System.Drawing.Point(74, 13);
+			this.buttonAdd.Location = new System.Drawing.Point(58, 10);
 			this.buttonAdd.Name = "buttonAdd";
-			this.buttonAdd.Size = new System.Drawing.Size(48, 30);
+			this.buttonAdd.Size = new System.Drawing.Size(36, 23);
 			this.buttonAdd.TabIndex = 3;
 			this.buttonAdd.Text = "Add";
 			this.buttonAdd.UseVisualStyleBackColor = true;
@@ -137,12 +136,11 @@
 			// 
 			// buttonClear
 			// 
-			this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.buttonClear.AutoSize = true;
 			this.buttonClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.buttonClear.Location = new System.Drawing.Point(12, 13);
+			this.buttonClear.Location = new System.Drawing.Point(10, 10);
 			this.buttonClear.Name = "buttonClear";
-			this.buttonClear.Size = new System.Drawing.Size(56, 30);
+			this.buttonClear.Size = new System.Drawing.Size(42, 23);
 			this.buttonClear.TabIndex = 2;
 			this.buttonClear.Text = "Clear";
 			this.buttonClear.UseVisualStyleBackColor = true;
@@ -150,22 +148,21 @@
 			// 
 			// labelDragImages
 			// 
-			this.labelDragImages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.labelDragImages.AutoSize = true;
-			this.labelDragImages.Location = new System.Drawing.Point(128, 18);
+			this.labelDragImages.Location = new System.Drawing.Point(100, 15);
 			this.labelDragImages.Name = "labelDragImages";
-			this.labelDragImages.Size = new System.Drawing.Size(239, 20);
+			this.labelDragImages.Size = new System.Drawing.Size(164, 13);
 			this.labelDragImages.TabIndex = 5;
 			this.labelDragImages.Text = "Drag images into the area above";
 			// 
 			// buttonRun
 			// 
-			this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.buttonRun.AutoSize = true;
 			this.buttonRun.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.buttonRun.Location = new System.Drawing.Point(1271, 13);
+			this.buttonRun.Location = new System.Drawing.Point(336, 10);
 			this.buttonRun.Name = "buttonRun";
-			this.buttonRun.Size = new System.Drawing.Size(49, 30);
+			this.buttonRun.Size = new System.Drawing.Size(36, 23);
 			this.buttonRun.TabIndex = 4;
 			this.buttonRun.Text = "Run";
 			this.buttonRun.UseVisualStyleBackColor = true;
@@ -173,33 +170,30 @@
 			// 
 			// panelControls
 			// 
-			this.panelControls.AutoSize = true;
-			this.panelControls.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.panelControls.Controls.Add(this.buttonClear);
 			this.panelControls.Controls.Add(this.buttonAdd);
 			this.panelControls.Controls.Add(this.buttonRun);
 			this.panelControls.Controls.Add(this.labelDragImages);
 			this.panelControls.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panelControls.Location = new System.Drawing.Point(0, 652);
+			this.panelControls.Location = new System.Drawing.Point(0, 198);
 			this.panelControls.Name = "panelControls";
-			this.panelControls.Size = new System.Drawing.Size(1332, 55);
+			this.panelControls.Size = new System.Drawing.Size(384, 43);
 			this.panelControls.TabIndex = 6;
 			// 
 			// FormMain
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1332, 707);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.ClientSize = new System.Drawing.Size(384, 241);
 			this.Controls.Add(this.listViewMain);
 			this.Controls.Add(this.panelControls);
+			this.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Menu = this.mainMenu;
-			this.MinimumSize = new System.Drawing.Size(600, 600);
+			this.MinimumSize = new System.Drawing.Size(400, 300);
 			this.Name = "FormMain";
 			this.Text = "AllShrink";
 			this.panelControls.ResumeLayout(false);
 			this.panelControls.PerformLayout();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
         }
 

@@ -27,164 +27,153 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.logoPictureBox = new System.Windows.Forms.PictureBox();
-            this.labelProductName = new System.Windows.Forms.Label();
-            this.labelVersion = new System.Windows.Forms.Label();
-            this.labelCopyright = new System.Windows.Forms.Label();
-            this.labelCompanyName = new System.Windows.Forms.Label();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.okButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // tableLayoutPanel
-            // 
-            this.tableLayoutPanel.ColumnCount = 2;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
-            this.tableLayoutPanel.Controls.Add(this.logoPictureBox, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.labelProductName, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.labelVersion, 1, 1);
-            this.tableLayoutPanel.Controls.Add(this.labelCopyright, 1, 2);
-            this.tableLayoutPanel.Controls.Add(this.labelCompanyName, 1, 3);
-            this.tableLayoutPanel.Controls.Add(this.textBoxDescription, 1, 4);
-            this.tableLayoutPanel.Controls.Add(this.okButton, 1, 5);
-            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(14, 14);
-            this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 6;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(624, 407);
-            this.tableLayoutPanel.TabIndex = 0;
-            // 
-            // logoPictureBox
-            // 
-            this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
-            this.logoPictureBox.Location = new System.Drawing.Point(4, 5);
-            this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.logoPictureBox.Name = "logoPictureBox";
-            this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
-            this.logoPictureBox.Size = new System.Drawing.Size(197, 397);
-            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logoPictureBox.TabIndex = 12;
-            this.logoPictureBox.TabStop = false;
-            // 
-            // labelProductName
-            // 
-            this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelProductName.Location = new System.Drawing.Point(214, 0);
-            this.labelProductName.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
-            this.labelProductName.MaximumSize = new System.Drawing.Size(0, 26);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(406, 26);
-            this.labelProductName.TabIndex = 19;
-            this.labelProductName.Text = "AllShrink";
-            this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelVersion
-            // 
-            this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelVersion.Location = new System.Drawing.Point(214, 40);
-            this.labelVersion.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
-            this.labelVersion.MaximumSize = new System.Drawing.Size(0, 26);
-            this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(406, 26);
-            this.labelVersion.TabIndex = 0;
-            this.labelVersion.Text = "1.0.0";
-            this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelCopyright
-            // 
-            this.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCopyright.Location = new System.Drawing.Point(214, 80);
-            this.labelCopyright.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
-            this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 26);
-            this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(406, 26);
-            this.labelCopyright.TabIndex = 21;
-            this.labelCopyright.Text = " © 2015";
-            this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // labelCompanyName
-            // 
-            this.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCompanyName.Location = new System.Drawing.Point(214, 120);
-            this.labelCompanyName.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
-            this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 26);
-            this.labelCompanyName.Name = "labelCompanyName";
-            this.labelCompanyName.Size = new System.Drawing.Size(406, 26);
-            this.labelCompanyName.TabIndex = 22;
-            this.labelCompanyName.Text = "Erik Berkun-Drevnig";
-            this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // textBoxDescription
-            // 
-            this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDescription.Location = new System.Drawing.Point(214, 165);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(9, 5, 4, 5);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.ReadOnly = true;
-            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(406, 193);
-            this.textBoxDescription.TabIndex = 23;
-            this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "Description";
-            // 
-            // okButton
-            // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.okButton.Location = new System.Drawing.Point(508, 368);
-            this.okButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(112, 34);
-            this.okButton.TabIndex = 24;
-            this.okButton.Text = "&OK";
-            // 
-            // FormAbout
-            // 
-            this.AcceptButton = this.okButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 435);
-            this.Controls.Add(this.tableLayoutPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormAbout";
-            this.Padding = new System.Windows.Forms.Padding(14);
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FormAbout";
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.tableLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
-            this.ResumeLayout(false);
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.labelProgram = new System.Windows.Forms.Label();
+			this.labelAuthor = new System.Windows.Forms.Label();
+			this.panelLinks = new System.Windows.Forms.Panel();
+			this.linkLabelGitHub = new System.Windows.Forms.LinkLabel();
+			this.linkLabelWebsite = new System.Windows.Forms.LinkLabel();
+			this.buttonOk = new System.Windows.Forms.Button();
+			this.tableLayoutPanel1.SuspendLayout();
+			this.panelLinks.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// tableLayoutPanel1
+			// 
+			this.tableLayoutPanel1.ColumnCount = 2;
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+			this.tableLayoutPanel1.Controls.Add(this.labelProgram, 1, 0);
+			this.tableLayoutPanel1.Controls.Add(this.labelAuthor, 1, 1);
+			this.tableLayoutPanel1.Controls.Add(this.panelLinks, 1, 2);
+			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 9);
+			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+			this.tableLayoutPanel1.RowCount = 3;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(417, 90);
+			this.tableLayoutPanel1.TabIndex = 0;
+			// 
+			// labelProgram
+			// 
+			this.labelProgram.AutoSize = true;
+			this.labelProgram.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.labelProgram.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelProgram.Location = new System.Drawing.Point(127, 0);
+			this.labelProgram.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.labelProgram.Name = "labelProgram";
+			this.labelProgram.Size = new System.Drawing.Size(288, 30);
+			this.labelProgram.TabIndex = 0;
+			this.labelProgram.Text = "AllShrink v1.0.0";
+			this.labelProgram.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// labelAuthor
+			// 
+			this.labelAuthor.AutoSize = true;
+			this.labelAuthor.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.labelAuthor.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelAuthor.Location = new System.Drawing.Point(127, 30);
+			this.labelAuthor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.labelAuthor.Name = "labelAuthor";
+			this.labelAuthor.Size = new System.Drawing.Size(288, 30);
+			this.labelAuthor.TabIndex = 1;
+			this.labelAuthor.Text = "(C) 2015 Erik Berkun-Drevnig";
+			this.labelAuthor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// panelLinks
+			// 
+			this.panelLinks.AutoSize = true;
+			this.panelLinks.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.panelLinks.Controls.Add(this.linkLabelGitHub);
+			this.panelLinks.Controls.Add(this.linkLabelWebsite);
+			this.panelLinks.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panelLinks.Location = new System.Drawing.Point(125, 60);
+			this.panelLinks.Margin = new System.Windows.Forms.Padding(0);
+			this.panelLinks.Name = "panelLinks";
+			this.panelLinks.Size = new System.Drawing.Size(292, 30);
+			this.panelLinks.TabIndex = 2;
+			// 
+			// linkLabelGitHub
+			// 
+			this.linkLabelGitHub.Dock = System.Windows.Forms.DockStyle.Left;
+			this.linkLabelGitHub.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.linkLabelGitHub.Location = new System.Drawing.Point(69, 0);
+			this.linkLabelGitHub.Margin = new System.Windows.Forms.Padding(0);
+			this.linkLabelGitHub.Name = "linkLabelGitHub";
+			this.linkLabelGitHub.Size = new System.Drawing.Size(52, 30);
+			this.linkLabelGitHub.TabIndex = 2;
+			this.linkLabelGitHub.TabStop = true;
+			this.linkLabelGitHub.Text = "GitHub";
+			this.linkLabelGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.linkLabelGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGitHub_LinkClicked);
+			// 
+			// linkLabelWebsite
+			// 
+			this.linkLabelWebsite.Dock = System.Windows.Forms.DockStyle.Left;
+			this.linkLabelWebsite.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.linkLabelWebsite.Location = new System.Drawing.Point(0, 0);
+			this.linkLabelWebsite.Margin = new System.Windows.Forms.Padding(0);
+			this.linkLabelWebsite.Name = "linkLabelWebsite";
+			this.linkLabelWebsite.Size = new System.Drawing.Size(69, 30);
+			this.linkLabelWebsite.TabIndex = 1;
+			this.linkLabelWebsite.TabStop = true;
+			this.linkLabelWebsite.Text = "Website";
+			this.linkLabelWebsite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.linkLabelWebsite.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWebsite_LinkClicked);
+			// 
+			// buttonOk
+			// 
+			this.buttonOk.AutoSize = true;
+			this.buttonOk.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.buttonOk.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonOk.Location = new System.Drawing.Point(369, 101);
+			this.buttonOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+			this.buttonOk.Name = "buttonOk";
+			this.buttonOk.Padding = new System.Windows.Forms.Padding(13, 0, 13, 0);
+			this.buttonOk.Size = new System.Drawing.Size(57, 23);
+			this.buttonOk.TabIndex = 3;
+			this.buttonOk.Text = "OK";
+			this.buttonOk.UseVisualStyleBackColor = true;
+			this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+			// 
+			// FormAbout
+			// 
+			this.AcceptButton = this.buttonOk;
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoSize = true;
+			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.ClientSize = new System.Drawing.Size(435, 154);
+			this.Controls.Add(this.buttonOk);
+			this.Controls.Add(this.tableLayoutPanel1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
+			this.Name = "FormAbout";
+			this.Padding = new System.Windows.Forms.Padding(9, 9, 9, 9);
+			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.Text = "About";
+			this.tableLayoutPanel1.ResumeLayout(false);
+			this.tableLayoutPanel1.PerformLayout();
+			this.panelLinks.ResumeLayout(false);
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
-        #endregion
+		#endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.PictureBox logoPictureBox;
-        private System.Windows.Forms.Label labelProductName;
-        private System.Windows.Forms.Label labelVersion;
-        private System.Windows.Forms.Label labelCopyright;
-        private System.Windows.Forms.Label labelCompanyName;
-        private System.Windows.Forms.TextBox textBoxDescription;
-        private System.Windows.Forms.Button okButton;
-    }
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+		private System.Windows.Forms.Label labelProgram;
+		private System.Windows.Forms.Label labelAuthor;
+		private System.Windows.Forms.LinkLabel linkLabelWebsite;
+		private System.Windows.Forms.Button buttonOk;
+		private System.Windows.Forms.Panel panelLinks;
+		private System.Windows.Forms.LinkLabel linkLabelGitHub;
+	}
 }
