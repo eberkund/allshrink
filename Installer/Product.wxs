@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="BEB2F057-06EA-4C28-8DCB-C628B48B23A2" Name="AllShrink" Language="1033" Version="1.0.0.0" Manufacturer="[Manufacturer]">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Installer" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+
+		<!-- Include a user interface -->
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+		<UIRef Id="WixUI_InstallDir" />
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLDIR" Name="AllShrink" />
+			</Directory>
+			<Directory Id="DesktopFolder" />
+			<Directory Id="ProgramMenuFolder" />
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLDIR" Source="..\AllShrink\bin\x86\Release\">
+			<Component Id="ProductComponent" Guid="FAF7170E-E887-4D1D-AA96-8101613FC742">
+				<File Id="AllShrinkExe" Name="AllShrink.exe">
+					<Shortcut Id="DesktopShortcut" Name="AllShrink" Directory="DesktopFolder"	Icon="AllShrink.exe" Advertise="yes" />
+					<Shortcut Id="ProgramsMenuShortcut" Name="AllShrink" Directory="ProgramMenuFolder" Icon="AllShrink.exe" Advertise="yes" />
+				</File>
+				<File Id="ImageMagick" Name="Magick.NET-x86.dll" />
+				<File Id="ImageMagickCore" Name="Magick.NET.Core.dll" />
+				<File Id="ImageMagickWrapper" Name="Magick.NET.Wrapper-x86.dll" />
+			</Component>
+		</ComponentGroup>
+		<Icon Id="AllShrink.exe" SourceFile="..\AllShrink\bin\x86\Release\AllShrink.exe" />
+	</Fragment>
+</Wix>
