@@ -10,7 +10,6 @@ namespace AllShrink
         public FormMain()
         {
             InitializeComponent();
-            Properties.Settings.Default.Reset();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
