@@ -68,7 +68,7 @@ namespace AllShrink
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
-            float savings;
+            double savings;
             string outputName;
 			string path = Properties.Settings.Default.path;
 			bool overwrite = Properties.Settings.Default.overwrite;
@@ -87,8 +87,8 @@ namespace AllShrink
                 // File size after shrinking;
                 after = new FileInfo(outputName);
 
-                // Calculate and display the savings
-                savings = (1 - (float)before.Length / after.Length) * 100;
+				// Calculate and display the savings
+				savings = 1 - (double)after.Length / before.Length;
                 listedImage.SubItems[columnSavings.Index].Text = savings.ToString("p1");
             }
         }
