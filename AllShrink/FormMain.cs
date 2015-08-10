@@ -17,7 +17,7 @@ namespace AllShrink
             OpenFileDialog open = new OpenFileDialog();
             open.Multiselect = true;
             DialogResult result = open.ShowDialog();
-            addCurrentDirectoryFiles(open.FileNames);
+			addCurrentDirectoryFiles(open.FileNames);
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -121,6 +121,15 @@ namespace AllShrink
 
         void addCurrentDirectoryFiles(string[] paths)
         {
+			// Clear the list if the savings have already been calculated
+			if (listViewMain.Items.Count > 0)
+			{
+				if (!listViewMain.Items[0].SubItems[columnSavings.Index].Text.Equals(""))
+				{
+					listViewMain.Items.Clear();
+				}
+			}
+
             // Given an array of paths, so add each one
             foreach (string path in paths)
             {
