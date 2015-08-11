@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="BEB2F057-06EA-4C28-8DCB-C628B48B23A2" Name="AllShrink" Language="1033" Version="1.0.0.0" Manufacturer="Erik Berkun-Drevnig">
+	<Product Id="*" Name="AllShrink" Language="1033" Version="1.0.0" Manufacturer="Erik Berkun-Drevnig" UpgradeCode="BEB2F057-06EA-4C28-8DCB-C628B48B23A2">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 		<MediaTemplate EmbedCab="yes" />
+		<MajorUpgrade DowngradeErrorMessage="A later version of All Shrink is already installed. Setup will now exit." />
 
 		<Feature Id="ProductFeature" Title="Installer" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
@@ -12,9 +13,12 @@
 		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
 		<UIRef Id="WixUI_InstallDir" />
 		<UIRef Id="WixUI_ErrorProgressText" />
+		
+		<!-- Installer resources -->
 		<WixVariable Id="WixUILicenseRtf" Value="Resources\License.rtf" />
 	</Product>
 
+	<!-- Installation directories -->
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
@@ -25,18 +29,29 @@
 		</Directory>
 	</Fragment>
 
+	<!-- Included files -->
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLDIR" Source="..\AllShrink\bin\x86\Release\">
-			<Component Id="ProductComponent" Guid="FAF7170E-E887-4D1D-AA96-8101613FC742">
+			<Component Id="AllShrinkExeCom">
 				<File Id="AllShrinkExe" Name="AllShrink.exe">
 					<Shortcut Id="DesktopShortcut" Name="AllShrink" Directory="DesktopFolder"	Icon="AllShrink.exe" Advertise="yes" />
 					<Shortcut Id="ProgramsMenuShortcut" Name="AllShrink" Directory="ProgramMenuFolder" Icon="AllShrink.exe" Advertise="yes" />
 				</File>
+			</Component>
+			
+			<Component Id="ImageMagickCom">
 				<File Id="ImageMagick" Name="Magick.NET-x86.dll" />
+			</Component>
+			
+			<Component Id="ImageMagickCoreCom">
 				<File Id="ImageMagickCore" Name="Magick.NET.Core.dll" />
+			</Component>
+			
+			<Component Id="ImageMagickWrapperCom">
 				<File Id="ImageMagickWrapper" Name="Magick.NET.Wrapper-x86.dll" />
 			</Component>
 		</ComponentGroup>
+		
 		<Icon Id="AllShrink.exe" SourceFile="..\AllShrink\bin\x86\Release\AllShrink.exe" />
 	</Fragment>
 </Wix>
