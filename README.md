@@ -8,6 +8,6 @@ A quick and easy, batch image optimizer for Windows based on [Magick.NET](https:
 
 ## Screenshots
 
-![Main Window](allshrink.com/images/screenshot-main.png)
+![Main Window](http://allshrink.com/images/screenshot-main.png)
 
-![Settings Window](allshrink.com/images/screenshot-settings.png)
+![Settings Window](http://allshrink.com/images/screenshot-settings.png)
