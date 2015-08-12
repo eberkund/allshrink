@@ -49,16 +49,22 @@ namespace AllShrink
 				{
 					outputName = listedImage.Text;
 				}
-				else
-				{
+				else if (Directory.Exists(Properties.Settings.Default.path)) { 
 					outputName = Properties.Settings.Default.path + "\\" + before.Name;
 				}
+				else
+				{
+					MessageBox.Show("Invalid output directory", "Error");
+					break;
+				}
 
+				// Remove picture metadata
 				if (Properties.Settings.Default.strip)
 				{
 					mi.Strip();
 				}
 
+				// Resize to max dimensions
 				if (Properties.Settings.Default.resize)
 				{
 					if (Properties.Settings.Default.units == 0)
@@ -87,6 +93,7 @@ namespace AllShrink
 				catch (MagickBlobErrorException ex)
 				{
 					MessageBox.Show("Unable to write file to specified path.", "Error");
+					break;
 				}
 
 				// File size after shrinking;

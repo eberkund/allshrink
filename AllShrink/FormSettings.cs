@@ -86,8 +86,11 @@ namespace AllShrink
 			Properties.Settings.Default.overwrite = checkBoxOverwrite.Checked;
 			if (!Directory.Exists(labelOutputPath.Text))
 			{
-				Properties.Settings.Default.path = labelOutputPath.Text;
 				MessageBox.Show("Invalid output path.", "Error");
+			}
+			else
+			{
+				Properties.Settings.Default.path = labelOutputPath.Text;
 			}
 
 			// Resize settings
@@ -114,5 +117,5 @@ namespace AllShrink
         {
             this.Close();
         }
-    }
+	}
 }

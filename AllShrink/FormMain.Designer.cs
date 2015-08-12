@@ -139,7 +139,7 @@
 			this.buttonClear.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.buttonClear.Location = new System.Drawing.Point(10, 10);
 			this.buttonClear.Name = "buttonClear";
-			this.buttonClear.Size = new System.Drawing.Size(42, 23);
+			this.buttonClear.Size = new System.Drawing.Size(41, 23);
 			this.buttonClear.TabIndex = 2;
 			this.buttonClear.Text = "Clear";
 			this.buttonClear.UseVisualStyleBackColor = true;
@@ -150,7 +150,7 @@
 			this.labelDragImages.AutoSize = true;
 			this.labelDragImages.Location = new System.Drawing.Point(100, 15);
 			this.labelDragImages.Name = "labelDragImages";
-			this.labelDragImages.Size = new System.Drawing.Size(164, 13);
+			this.labelDragImages.Size = new System.Drawing.Size(161, 13);
 			this.labelDragImages.TabIndex = 5;
 			this.labelDragImages.Text = "Drag images into the area above";
 			// 
@@ -159,9 +159,9 @@
 			this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.buttonRun.AutoSize = true;
 			this.buttonRun.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.buttonRun.Location = new System.Drawing.Point(336, 10);
+			this.buttonRun.Location = new System.Drawing.Point(335, 10);
 			this.buttonRun.Name = "buttonRun";
-			this.buttonRun.Size = new System.Drawing.Size(36, 23);
+			this.buttonRun.Size = new System.Drawing.Size(37, 23);
 			this.buttonRun.TabIndex = 4;
 			this.buttonRun.Text = "Run";
 			this.buttonRun.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@
 			this.ClientSize = new System.Drawing.Size(384, 262);
 			this.Controls.Add(this.listViewMain);
 			this.Controls.Add(this.panelControls);
-			this.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
 			this.Menu = this.mainMenu;
 			this.MinimumSize = new System.Drawing.Size(400, 300);
 			this.Name = "FormMain";
