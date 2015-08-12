@@ -348,7 +348,7 @@
 			this.Padding = new System.Windows.Forms.Padding(10);
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
-			this.Text = "`";
+			this.Text = "Settings";
 			this.TopMost = true;
 			this.groupBoxResizing.ResumeLayout(false);
 			this.groupBoxResizing.PerformLayout();
