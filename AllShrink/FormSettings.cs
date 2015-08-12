@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AllShrink
@@ -10,8 +11,8 @@ namespace AllShrink
             InitializeComponent();
 
             // Resize settings
-            textBoxWidth.Text = Properties.Settings.Default.maxWidth.ToString();
-            textBoxHeight.Text = Properties.Settings.Default.maxHeight.ToString();
+            numericUpDownWidth.Value = Properties.Settings.Default.maxWidth;
+            numericUpDownHeight.Value = Properties.Settings.Default.maxHeight;
             checkBoxResize.Checked = Properties.Settings.Default.resize;
             if (Properties.Settings.Default.units == 0)
             {
@@ -37,18 +38,18 @@ namespace AllShrink
         {
             if (checkBoxResize.Checked)
             {
-                textBoxWidth.Enabled = true;
+                numericUpDownWidth.Enabled = true;
                 labelWidth.Enabled = true;
-                textBoxHeight.Enabled = true;
+                numericUpDownHeight.Enabled = true;
                 labelHeight.Enabled = true;
                 radioButtonPixels.Enabled = true;
                 radioButtonPercent.Enabled = true;
             }
             else
             {
-                textBoxWidth.Enabled = false;
+                numericUpDownWidth.Enabled = false;
                 labelWidth.Enabled = false;
-                textBoxHeight.Enabled = false;
+                numericUpDownHeight.Enabled = false;
                 labelHeight.Enabled = false;
                 radioButtonPixels.Enabled = false;
                 radioButtonPercent.Enabled = false;
@@ -81,9 +82,17 @@ namespace AllShrink
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            // Resize settings
-            Properties.Settings.Default.maxWidth = Int16.Parse(textBoxWidth.Text);
-            Properties.Settings.Default.maxHeight = Int16.Parse(textBoxHeight.Text);
+			// Output settings
+			Properties.Settings.Default.overwrite = checkBoxOverwrite.Checked;
+			if (!Directory.Exists(labelOutputPath.Text))
+			{
+				Properties.Settings.Default.path = labelOutputPath.Text;
+				MessageBox.Show("Invalid output path.", "Error");
+			}
+
+			// Resize settings
+			Properties.Settings.Default.maxWidth = (int)numericUpDownWidth.Value;
+            Properties.Settings.Default.maxHeight = (int)numericUpDownHeight.Value;
             Properties.Settings.Default.resize = checkBoxResize.Checked;
             if (radioButtonPixels.Checked)
             {
@@ -94,16 +103,11 @@ namespace AllShrink
                 Properties.Settings.Default.units = 1;
             }
 
-            // Output settings
-            Properties.Settings.Default.overwrite = checkBoxOverwrite.Checked;
-            Properties.Settings.Default.path = labelOutputPath.Text;
-
             // Compression settings
             Properties.Settings.Default.quality = trackBarQuality.Value;
             Properties.Settings.Default.strip = checkBoxStrip.Checked;
 
             Properties.Settings.Default.Save();
-            this.Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

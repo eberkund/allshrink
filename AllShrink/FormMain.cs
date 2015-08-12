@@ -27,64 +27,70 @@ namespace AllShrink
 
 		private void processImage(string input, string output)
 		{
-			MagickImage	mi = new MagickImage(input);
 
-			if (Properties.Settings.Default.strip)
-			{
-				mi.Strip();
-			}
-
-			if (Properties.Settings.Default.resize)
-			{
-				if (Properties.Settings.Default.units == 0)
-				{
-					mi.Resize(
-						Properties.Settings.Default.maxWidth,
-						Properties.Settings.Default.maxHeight
-					);
-				}
-				else if (Properties.Settings.Default.units == 1)
-				{
-					mi.Resize(
-						new Percentage(Properties.Settings.Default.maxWidth),
-						new Percentage(Properties.Settings.Default.maxHeight)
-					);
-				}
-			}
-
-			mi.Quality = Properties.Settings.Default.quality * (100 / 13);
-			mi.Interlace = Interlace.Jpeg;
-
-			try
-			{
-				mi.Write(output);
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show(ex.ToString(), "Error");
-			}
 		}
 
         private void buttonRun_Click(object sender, EventArgs e)
         {
             double savings;
             string outputName;
-			string path = Properties.Settings.Default.path;
-			bool overwrite = Properties.Settings.Default.overwrite;
 			FileInfo before;
 			FileInfo after;
+			MagickImage mi;
 
 			foreach (ListViewItem listedImage in listViewMain.Items)
             {
 				// File size before shrinking
                 before = new FileInfo(listedImage.Text);
-                
-                // Generate the new image
-                outputName = overwrite ? listedImage.Text : (path + "\\" + before.Name);
-				processImage(listedImage.Text, outputName);
+				mi = new MagickImage(listedImage.Text);
 
-                // File size after shrinking;
-                after = new FileInfo(outputName);
+				// Get the output file path
+				if (Properties.Settings.Default.overwrite)
+				{
+					outputName = listedImage.Text;
+				}
+				else
+				{
+					outputName = Properties.Settings.Default.path + "\\" + before.Name;
+				}
+
+				if (Properties.Settings.Default.strip)
+				{
+					mi.Strip();
+				}
+
+				if (Properties.Settings.Default.resize)
+				{
+					if (Properties.Settings.Default.units == 0)
+					{
+						mi.Resize(
+							Properties.Settings.Default.maxWidth,
+							Properties.Settings.Default.maxHeight
+						);
+					}
+					else if (Properties.Settings.Default.units == 1)
+					{
+						mi.Resize(
+							new Percentage(Properties.Settings.Default.maxWidth),
+							new Percentage(Properties.Settings.Default.maxHeight)
+						);
+					}
+				}
+
+				mi.Quality = Properties.Settings.Default.quality * (100 / 13);
+				mi.Interlace = Interlace.Jpeg;
+
+				try
+				{
+					mi.Write(outputName);
+				}
+				catch (MagickBlobErrorException ex)
+				{
+					MessageBox.Show("Unable to write file to specified path.", "Error");
+				}
+
+				// File size after shrinking;
+				after = new FileInfo(outputName);
 
 				// Calculate and display the savings
 				savings = 1 - (double)after.Length / before.Length;
