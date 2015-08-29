@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 			this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
 			this.menuItemFile = new System.Windows.Forms.MenuItem();
 			this.menuItemSettings = new System.Windows.Forms.MenuItem();
@@ -187,7 +186,6 @@
 			this.Controls.Add(this.listViewMain);
 			this.Controls.Add(this.panelControls);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Menu = this.mainMenu;
 			this.MinimumSize = new System.Drawing.Size(400, 300);
 			this.Name = "FormMain";

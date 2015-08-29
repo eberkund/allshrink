@@ -32,6 +32,9 @@
   <ItemGroup>
     <Folder Include="Resources" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\License.rtf" />
+  </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
