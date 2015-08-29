@@ -92,7 +92,7 @@ namespace AllShrink
 				}
 				catch (MagickBlobErrorException ex)
 				{
-					MessageBox.Show("Unable to write file to specified path.", "Error");
+					MessageBox.Show("Unable to write file to specified path.\n" + ex.Message, "Error");
 					break;
 				}
 
